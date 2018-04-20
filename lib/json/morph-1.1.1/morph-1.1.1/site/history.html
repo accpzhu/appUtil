@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><title>Morph - Release History</title><style type="text/css" media="all">
+          @import url("./style/maven-base.css");
+          
+          @import url("./style/maven-theme.css");</style><link rel="stylesheet" href="./style/print.css" type="text/css" media="print"></link><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"></meta><meta name="author" content="Matt Sgarlata"></meta><meta name="email" content="sgarlatm@lists.sourceforge.net"></meta></head><body class="composite"><div id="banner"><a href="http://www.sourceforge.net/" id="organizationLogo"><img alt="SourceForge" src="http://sourceforge.net/sflogo.php?group_id=124910&amp;type=5"></img></a><a href="http://morph.sourceforge.net/" id="projectLogo"><img alt="Morph" src="./images/morph.jpg"></img></a><div class="clear"><hr></hr></div></div><div id="breadcrumbs"><div class="xleft">Last published: 03 July 2008 16:05 CDT
+                <span class="separator">|</span> Doc for  1.1.1
+                </div><div class="xright"></div><div class="clear"><hr></hr></div></div><div id="leftColumn"><div id="navcolumn"><div id="menuMorph"><h5>Morph</h5><ul><li class="none"><a href="index.html">Introduction</a></li><li class="none"><a href="http://sourceforge.net/project/showfiles.php?group_id=124910" class="externalLink" title="External Link">Download</a></li><li class="none"><strong><a href="history.html">History</a></strong></li><li class="none"><a href="http://sourceforge.net/projects/morph" class="externalLink" title="External Link">SourceForge Site</a></li><li class="none"><a href="http://sourceforge.net/project/stats/?group_id=124910&amp;ugn=morph" class="externalLink" title="External Link">Activity Statistics</a></li></ul></div><div id="menuDocumentation"><h5>Documentation</h5><ul><li class="none"><a href="reference/html/index.html">Reference Doc (HTML)</a></li><li class="none"><a href="reference/pdf/morph-reference.pdf">Reference Doc (PDF)</a></li><li class="none"><a href="apidocs/index.html">JavaDoc</a></li><li class="none"><a href="xref/index.html">Browse Source</a></li></ul></div><div id="menuRelated_Projects"><h5>Related Projects</h5><ul><li class="expanded"><a href="alternatives/beanutils.html">BeanUtils</a><ul><li class="none"><a href="http://jakarta.apache.org/commons/beanutils/" class="externalLink" title="External Link">Homepage</a></li><li class="none"><a href="alternatives/beanutils.html">Comparison</a></li></ul></li><li class="expanded"><a href="alternatives/jexl.html">JEXL</a><ul><li class="none"><a href="http://jakarta.apache.org/commons/jexl/" class="externalLink" title="External Link">Homepage</a></li><li class="none"><a href="alternatives/jexl.html">Comparison</a></li></ul></li><li class="none"><a href="morphed_apps.html">Morphed Apps</a></li></ul></div><div id="menuTools"><h5>Tools</h5><ul><li class="none"><a href="http://www.cenqua.com/clover" class="externalLink" title="External Link">Clover</a></li></ul></div><div id="menuProject_Documentation"><h5>Project Documentation</h5><ul><li class="none"><a href="index.html">About</a></li><li class="collapsed"><a href="project-info.html">Project Info</a></li><li class="collapsed"><a href="maven-reports.html">Project Reports</a></li><li class="none"><a href="development-process.html">Development Process</a></li></ul></div><div id="legend"><h5>Legend</h5><ul><li class="externalLink">External Link</li><li class="newWindow">Opens in a new window</li></ul></div><a href="http://maven.apache.org/" title="Built by Maven" id="poweredBy"><img alt="Built by Maven" src="./images/logos/mavenlogo_builtby_w.png"></img></a></div></div><div id="bodyColumn"><div class="contentBox"><div class="section"><a name="Production_Releases"></a><h2>Production Releases</h2>
+
+			<div class="subsection"><a name="Morph_1_1_1__July_3__2008_"></a><h3>Morph 1.1.1 (July 3, 2008)</h3>
+				<ul>
+					<li>Fixed bad POM</li>
+				</ul>
+			</div>
+
+			<div class="subsection"><a name="Morph_1_1__June_13__2008_"></a><h3>Morph 1.1 (June 13, 2008)</h3>
+				<ul>
+					<li>Added several new converters/copiers</li>
+					<li>Improved default SimpleDelegatingTransformer component members and ordering</li>
+					<li>Fixed transformation caching issue that was causing conversions done using the SimpleDelegatingTransformer to return results of previous transformations rather than performing the transformation again as it should have been.</li>
+					<li>Improved handling of nulls by all converters.</li>
+					<li>Property Editor support</li>
+					<li>Auto-detect Spring's presence and use the built in locale thread local</li>
+					<li>Renamed ChainedConverter to ChainedTransformer, fixed its implementation, and added Copier functionality</li>
+					<li>Added CharSequence support to TextConverter</li>
+					<li>Introduced the concept of imprecise transformers, over which other transformers are to be preferred</li>
+					<li>Improved the choice of copy/convert in TransformerUtils.transform()</li>
+					<li>ConverterDecorator/CopierDecorator can be set with a default Locale which they will use for Decorated* (implicit Locale) operations</li>
+					<li>Improved handling of nested exceptions</li>
+					<li>Added transformerName property to BaseTransformer for inexpensive improved logging</li>
+					<li>Added reflectorName property to BaseReflector for inexpensive improved logging</li>
+					<li>Added some classes to assist integration with other libraries in subpackages of net.sf.morph.integration</li>
+					<li>Reflectors attempt to avoid do-nothing property set operations</li>
+					<li>Other fixes and improvements</li>
+				</ul>
+			</div>
+
+			<div class="subsection"><a name="Morph_1_0_1__March_31__2006_"></a><h3>Morph 1.0.1 (March 31, 2006)</h3>
+				<ul>
+					<li>Fixed bug that was preventing properties of POJOs without getters from being recognized by Morph in some circumstances (bug 1460440)</li>
+				</ul>
+			</div>
+
+			<div class="subsection"><a name="Morph_1_0__February_10__2006_"></a><h3>Morph 1.0 (February 10, 2006)</h3>
+				<ul>
+					<li>Improved Internationalization support for number to text and text to number conversions</li>
+					<li>Fixed bug that was causing Morph.convertToDouble and Morph.convertToFloat to only return Integers</li>
+					<li>Performanced tuned the static Morph conversion methods so that they are nearly as fast as calling the corresponding conversion method manually.  For example, 10,000 iterations of Morph.convertToString used to take 6 seconds on my PC compared to only 50 milliseconds for NumberFormat.format.  Now Morph only takes around 200 milliseconds.</li>
+					<li>Removed the BaseConverter and BaseCopier classes because they didn't really do anything.  Any existing classes that extend those base classes should extend BaseTransformer instead.  Just be sure to <code>implements DecoratedConverter</code> to your converts and <code>implements DecoratedConverter, DecoratedCopier</code> to your copiers.</li>
+					<li>Minor updates to the reference documentation</li>
+					<li>Added the ObjectToClassConverter and corresponding test case</li>
+				</ul>
+			</div>
+
+		</div><div class="section"><a name="Beta_Releases"></a><h2>Beta Releases</h2>
+
+			<div class="subsection"><a name="Morph_0_9_2__December_5__2005_"></a><h3>Morph 0.9.2 (December 5, 2005)</h3>
+				<ul>
+					<li>Removed the GraphTransformer interface and renamed the graphTransformer property of BaseTransformer back to nestedTransformer</li>
+					<li>Removed the TraverserConverter and refined the ContainerCopier so that it can convert to Iterators and Enumerators</li>
+					<li>Added TypeChangingGraphTransformer to assist with transformations of object graphs from a set of domain objects to a set of transfer objects</li>
+					<li>Various bug fixes</li>
+				</ul>
+			</div>
+
+			<div class="subsection"><a name="Morph_0_9_1__April_14__2005_"></a><h3>Morph 0.9.1 (April 14, 2005)</h3>
+				<ul>
+					<li>More performance immprovements, especially to the reflectors for HTTP requests, HTTP sessions, and servlet contexts.  The test suite now executes in around 1.75s.</li>
+					<li>Moved the Composite package to its own project</li>
+					<li>More improvements to the ContainerCopier and PropertyCopiers</li>
+					<li>Introduced the <code><a href="apidocs/net/sf/morph/transform/converters/ArbitraryObjectMappingConverter.html">ArbitraryObjectMappingConverter</a></code></li>
+				</ul>
+			</div>
+
+			<div class="subsection"><a name="Morph_0_8_3__March_6__2005_"></a><h3>Morph 0.8.3 (March 6, 2005)</h3>
+				<ul>
+					<li>Performance improvements.  It's difficult to quantify exactly how much better performance is, but the test suite now takes around 3 seconds to execute on my laptop, whereas it used to take around 8 seconds.</li>
+					<li>Improved support for nested transformations using the PropertyName copiers, ContainerCopier.</li>
+					<li>Morph now supports transformations of cyclic graphs.</li>
+					<li>net/sf/morph/morphContext.xml is a Spring application context file available as a classpath resource.  This file defines common beans that you may need to reference in an application built on Spring.</li>
+					<li>Improved log output.</li>
+				</ul>
+			</div>
+
+			<div class="subsection"><a name="Morph_0_8_2__February_12__2005_"></a><h3>Morph 0.8.2 (February 12, 2005)</h3>
+				<ul>
+					<li>Improvements to ObjectReflector that bring it more in line with the JavaBeans specification.  Thanks to Alexander Volanis!</li>
+					<li>Major improvements to the PropertyNameMatchingCopier and PropertyNameMappingCopier.  The capabilities of the SelectivePropertyNameMatchingCopier have been folded into the PropertyNameMatchingCopier.  Again, thanks to Alexander Volanis!</li>
+					<li>Began a <a href="reference/html/index.html">reference document</a></li>
+					<li>Renamed "pseudo properties" for Sizable and Bean objects to "implicit properties".</li>
+					<li>Updated the wrapper package so that it throws WrapperExceptions rather than ReflectionExceptions</li>
+					<li>Changed the behavior of the BeanReflector.getPropertyNames method so that it no longer returns the implicit properties for the object, unless those properties have been explicitly defined in the object.</li>
+				</ul>
+			</div>
+
+			<div class="subsection"><a name="Morph_0_8_1__Jan_30__2005_"></a><h3>Morph 0.8.1 (Jan 30, 2005)</h3>
+				<ul>
+					<li>Test coverage at 61.1%</li>
+					<li>New wrapper package</li>
+				</ul>
+			</div>
+
+		</div><div class="section"><a name="Alpha_Releases"></a><h2>Alpha Releases</h2>
+
+			<div class="subsection"><a name="Morph_0_7_2__Jan_10__2005_"></a><h3>Morph 0.7.2 (Jan 10, 2005)</h3>
+				<ul>
+					<li>Defined many more transformers and refactored the existing ones</li>
+					<li>Introduced a new composite package that provides a standard way for implementing the Composite design pattern (<a href="mailto:sgarlatm@users.sourceforge.net">let me know</a> if you think I should split this off into a separate project)</li>
+					<li>Refactored the composite reflectors and transformers to use the new composite package</li>
+					<li>Apache Jakarta <a href="http://jakarta.apache.org/velocity" class="externalLink" title="External Link">Velocity</a> integration</li>
+					<li>Experimental Apache Jakarta Commons <a href="http://jakarta.apache.org/commons/chain" class="externalLink" title="External Link">Chain</a> integration</li>
+				</ul>
+			</div>
+
+			<div class="subsection"><a name="Morph_0_6_4__Dec_23__2004_"></a><h3>Morph 0.6.4 (Dec 23, 2004)</h3>
+				<ul>
+					<li>Improved test coverage and bug fixes</li>
+				</ul>
+			</div>
+
+			<div class="subsection"><a name="Morph_0_6_3__Dec_21__2004_"></a><h3>Morph 0.6.3 (Dec 21, 2004)</h3>
+				<ul>
+					<li>Improved test coverage and bug fixes</li>
+				</ul>
+			</div>
+
+			<div class="subsection"><a name="Morph_0_6_2__Dec_20__2004_"></a><h3>Morph 0.6.2 (Dec 20, 2004)</h3>
+				<ul>
+					<li>Combined the many different DelegatingReflectors into a single DelegatingReflector that implements every Reflector interface</li>
+					<li>Detect if Servlet API is present, and if so include the web reflectors in the DelegatingReflector</li>
+					<li>Detect if BeanUtils is present, and if so include the DynaBeanReflector in DelegatingReflector</li>
+					<li>Refactored container copiers (combined the old BaseContainerReflector, GrowableContainerReflector and MutableIndexedContainerReflector into just one class, ContainerReflectorCopier)</li>
+					<li>Make all bean reflectors expose the 'class' read-only pseudo-property so random bean-like objects</li>
+					<li>Made sizable reflectors expose a size pseudo-property, like JEXL.</li>
+					<li>Introduced the <code><a href="apidocs/net/sf/morph/web/MorphFilter.html">MorphFilter</a></code> which places a <code><a href="apidocs/net/sf/morph/context/contexts/HttpServletContext.html">HttpServletContext</a></code> in each request.  This exposes Morph's power to JSPs</li>
+				</ul>
+			</div>
+
+			<div class="subsection"><a name="Morph_0_5_2__Dec_11__2004_"></a><h3>Morph 0.5.2 (Dec 11, 2004)</h3>
+				<ul>
+					<li>Test cases now pass</li>
+				</ul>
+			</div>
+
+			<div class="subsection"><a name="Morph_0_5_1__Dec_7__2004_"></a><h3>Morph 0.5.1 (Dec 7, 2004)</h3>
+				<ul>
+					<li>Renamed LanguageEvaluator to <code><a href="apidocs/net/sf/morph/lang/DecoratedLanguage.html">DecoratedLanguage</a></code> and similarly extended the explicit naming of the Decorator pattern to other parts of the Morph framework.  and other new interfaces are <code><a href="apidocs/net/sf/morph/transform/DecoratedTransformer.html">DecoratedTransformer</a></code>, <code><a href="apidocs/net/sf/morph/transform/DecoratedConverter.html">DecoratedConverter</a></code> and <code><a href="apidocs/net/sf/morph/transform/DecoratedCopier.html">DecoratedCopier</a></code>.  The <code><a href="apidocs/net/sf/morph/context/DecoratedContext.html">DecoratedContext</a></code> is particularly nice, and I'll definitely want to use it to show a mapping of HTTP request parameters to an object model.</li>
+					<li>Cleaned up and improved documentation for the reflect package.  The package is probably pretty close to done at this point.</li>
+					<li>Not all tests are passing in this release.  This release was focused on API and documentation.  The next release will focus on tests and test coverage (time to try out Clover!)</li>
+				</ul>
+			</div>
+
+			<div class="subsection"><a name="Morph_0_4_2__Dec_2__2004_"></a><h3>Morph 0.4.2 (Dec 2, 2004)</h3>
+				<ul>
+					<li>Settled on an API for <code><a href="apidocs/net/sf/morph/lang/Language.html">Language</a></code> and began work on its first out-of-the-box implementation, the <code><a href="apidocs/net/sf/morph/lang/languages/SimpleLanguage.html">SimpleLanguage</a></code>.</li>
+					<li>Introduced <code><strikethrough>LanguageEvaluator</strikethrough></code> which is the combination of a <code><a href="apidocs/net/sf/morph/transform/Converter.html">Converter</a></code> and a Language.</li>
+					<li>Introduced a static facade to the Morph framework (the <code><a href="apidocs/net/sf/morph/Morph.html">Morph</a></code> class).	This facade is static so it will be easier for people who haven't started using a good dependency injection framework yet.</li>
+				</ul>
+			</div>
+
+			<div class="subsection"><a name="Morph_0_3_1__Nov_27__2004_"></a><h3>Morph 0.3.1 (Nov 27, 2004)</h3>
+				<ul>
+					<li>Introduced new Transformer abstraction, which is a common super-interface for Converters and Copiers</li>
+					<li>Removed isConvertible, isCopiable and isReflectable in favor of getDestinationClasses, getSourceClasses, and getReflectableClasses.	This was done primarily to support the ChainConverter</li>
+					<li>Broke up the IndexedReflector interface into several smaller interfaces that each define pieces of functionality that a "container" of items might have</li>
+				</ul>
+			</div>
+
+			<div class="subsection"><a name="Morph_0_2_1__Nov_23__2004_"></a><h3>Morph 0.2.1 (Nov 23, 2004)</h3>
+				<ul>
+					<li>Filled out the context package</li>
+				</ul>
+			</div>
+
+		</div></div></div><div class="clear"><hr></hr></div><div id="footer"><div class="xright">© 2004-2008, SourceForge</div><div class="clear"><hr></hr></div></div></body></html>

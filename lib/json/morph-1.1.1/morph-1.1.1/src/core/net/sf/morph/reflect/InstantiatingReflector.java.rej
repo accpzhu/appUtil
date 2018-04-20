@@ -1,0 +1,10 @@
+@@ -19,6 +19,9 @@
+  * implementations for interfaces, instantiate arrays, etc. Only classes that
+  * are reflectable by this reflector should be instantiatable.
+  * 
++ * <p>This reflector is designed to facilitate construction of both simple
++ * objects and objects that do not offer no-argument constructors.
++ * 
+  * @author Matt Sgarlata
+  * @since Nov 27, 2004
+  */

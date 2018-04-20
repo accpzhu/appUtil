@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="null" lang="null">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" /><title>PersonExampleTestCase xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../stylesheet.css" />
+</head>
+<body>
+<pre>
+
+<a name="1" href="#1">1</a>   <em class="comment">/*</em>
+<a name="2" href="#2">2</a>   <em class="comment"> * Copyright 2004-2005 the original author or authors.</em>
+<a name="3" href="#3">3</a>   <em class="comment"> * </em>
+<a name="4" href="#4">4</a>   <em class="comment"> * Licensed under the Apache License, Version 2.0 (the "License"); you may not</em>
+<a name="5" href="#5">5</a>   <em class="comment"> * use this file except in compliance with the License. You may obtain a copy of</em>
+<a name="6" href="#6">6</a>   <em class="comment"> * the License at</em>
+<a name="7" href="#7">7</a>   <em class="comment"> * </em>
+<a name="8" href="#8">8</a>   <em class="comment"> * <a href="http://www.apache.org/licenses/LICENSE-2.0" target="alexandria_uri">http://www.apache.org/licenses/LICENSE-2.0</a></em>
+<a name="9" href="#9">9</a>   <em class="comment"> * </em>
+<a name="10" href="#10">10</a>  <em class="comment"> * Unless required by applicable law or agreed to in writing, software</em>
+<a name="11" href="#11">11</a>  <em class="comment"> * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT</em>
+<a name="12" href="#12">12</a>  <em class="comment"> * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the</em>
+<a name="13" href="#13">13</a>  <em class="comment"> * License for the specific language governing permissions and limitations under</em>
+<a name="14" href="#14">14</a>  <em class="comment"> * the License.</em>
+<a name="15" href="#15">15</a>  <em class="comment"> */</em>
+<a name="16" href="#16">16</a>  <strong>package</strong> net.sf.morph.examples.person;
+<a name="17" href="#17">17</a>  
+<a name="18" href="#18">18</a>  <strong>import</strong> java.util.ArrayList;
+<a name="19" href="#19">19</a>  <strong>import</strong> java.util.HashMap;
+<a name="20" href="#20">20</a>  <strong>import</strong> java.util.List;
+<a name="21" href="#21">21</a>  <strong>import</strong> java.util.Map;
+<a name="22" href="#22">22</a>  
+<a name="23" href="#23">23</a>  <strong>import</strong> junit.framework.TestCase;
+<a name="24" href="#24">24</a>  <strong>import</strong> net.sf.morph.transform.Transformer;
+<a name="25" href="#25">25</a>  <strong>import</strong> net.sf.morph.transform.converters.DefaultToBooleanConverter;
+<a name="26" href="#26">26</a>  <strong>import</strong> net.sf.morph.transform.converters.DefaultToTextConverter;
+<a name="27" href="#27">27</a>  <strong>import</strong> net.sf.morph.transform.converters.IdentityConverter;
+<a name="28" href="#28">28</a>  <strong>import</strong> net.sf.morph.transform.converters.NumberConverter;
+<a name="29" href="#29">29</a>  <strong>import</strong> net.sf.morph.transform.converters.TextConverter;
+<a name="30" href="#30">30</a>  <strong>import</strong> net.sf.morph.transform.converters.TextToNumberConverter;
+<a name="31" href="#31">31</a>  <strong>import</strong> net.sf.morph.transform.copiers.ContainerCopier;
+<a name="32" href="#32">32</a>  <strong>import</strong> net.sf.morph.transform.copiers.PropertyNameMappingCopier;
+<a name="33" href="#33">33</a>  <strong>import</strong> net.sf.morph.transform.copiers.PropertyNameMatchingCopier;
+<a name="34" href="#34">34</a>  <strong>import</strong> net.sf.morph.transform.transformers.SimpleDelegatingTransformer;
+<a name="35" href="#35">35</a>  <strong>import</strong> net.sf.morph.util.TestUtils;
+<a name="36" href="#36">36</a>  
+<a name="37" href="#37">37</a>  <em>/**</em>
+<a name="38" href="#38">38</a>  <em> * @author Matt Sgarlata</em>
+<a name="39" href="#39">39</a>  <em> * @since Apr 12, 2005</em>
+<a name="40" href="#40">40</a>  <em> */</em>
+<a name="41" href="#41">41</a>  <strong>public</strong> <strong>class</strong> <a href="../../../../../net/sf/morph/examples/person/PersonExampleTestCase.html">PersonExampleTestCase</a> <strong>extends</strong> TestCase {
+<a name="42" href="#42">42</a>  
+<a name="43" href="#43">43</a>  	<strong>private</strong> <a href="../../../../../net/sf/morph/examples/person/PersonDAO.html">PersonDAO</a> johnSmith;
+<a name="44" href="#44">44</a>  	
+<a name="45" href="#45">45</a>  	<strong>private</strong> SimpleDelegatingTransformer graphTransformer;
+<a name="46" href="#46">46</a>  	
+<a name="47" href="#47">47</a>  	<strong>protected</strong> <strong>void</strong> setUp() throws Exception {
+<a name="48" href="#48">48</a>  		setUpJohnSmith();
+<a name="49" href="#49">49</a>  		setUpTransformer();
+<a name="50" href="#50">50</a>  	}
+<a name="51" href="#51">51</a>  	
+<a name="52" href="#52">52</a>  	<strong>protected</strong> <strong>void</strong> setUpJohnSmith() {
+<a name="53" href="#53">53</a>  		PersonDAO matthew = <strong>new</strong> <a href="../../../../../net/sf/morph/examples/person/PersonDAO.html">PersonDAO</a>();
+<a name="54" href="#54">54</a>  		matthew.setFirstName(<span class="string">"Matthew"</span>);
+<a name="55" href="#55">55</a>  		
+<a name="56" href="#56">56</a>  		PersonDAO natalie = <strong>new</strong> <a href="../../../../../net/sf/morph/examples/person/PersonDAO.html">PersonDAO</a>();
+<a name="57" href="#57">57</a>  		natalie.setFirstName(<span class="string">"Natalie"</span>);
+<a name="58" href="#58">58</a>  		
+<a name="59" href="#59">59</a>  		AddressDAO home = <strong>new</strong> <a href="../../../../../net/sf/morph/examples/person/AddressDAO.html">AddressDAO</a>();
+<a name="60" href="#60">60</a>  		home.setName(<span class="string">"Home"</span>);
+<a name="61" href="#61">61</a>  		home.setStreetAddress(<span class="string">"1 Home St"</span>);
+<a name="62" href="#62">62</a>  		
+<a name="63" href="#63">63</a>  		AddressDAO work = <strong>new</strong> <a href="../../../../../net/sf/morph/examples/person/AddressDAO.html">AddressDAO</a>();
+<a name="64" href="#64">64</a>  		work.setName(<span class="string">"Work"</span>);
+<a name="65" href="#65">65</a>  		work.setStreetAddress(<span class="string">"2 Work Circle"</span>);
+<a name="66" href="#66">66</a>  		
+<a name="67" href="#67">67</a>  		VehicleDAO fordTaurus = <strong>new</strong> <a href="../../../../../net/sf/morph/examples/person/VehicleDAO.html">VehicleDAO</a>();
+<a name="68" href="#68">68</a>  		fordTaurus.setManufacturer(<span class="string">"Ford"</span>);
+<a name="69" href="#69">69</a>  		fordTaurus.setModel(<span class="string">"Taurus"</span>);
+<a name="70" href="#70">70</a>  		
+<a name="71" href="#71">71</a>  		VehicleDAO hondaCivic = <strong>new</strong> <a href="../../../../../net/sf/morph/examples/person/VehicleDAO.html">VehicleDAO</a>();
+<a name="72" href="#72">72</a>  		hondaCivic.setManufacturer(<span class="string">"Honda"</span>);
+<a name="73" href="#73">73</a>  		hondaCivic.setModel(<span class="string">"Civic"</span>);		
+<a name="74" href="#74">74</a>  		
+<a name="75" href="#75">75</a>  		johnSmith = <strong>new</strong> <a href="../../../../../net/sf/morph/examples/person/PersonDAO.html">PersonDAO</a>();
+<a name="76" href="#76">76</a>  		johnSmith.setFirstName(<span class="string">"John"</span>);
+<a name="77" href="#77">77</a>  		johnSmith.setMiddleName(<span class="string">"A."</span>);
+<a name="78" href="#78">78</a>  		johnSmith.setLastName(<span class="string">"Smith"</span>);
+<a name="79" href="#79">79</a>  		johnSmith.setCreditCardNumber(<span class="string">"5555555555555555"</span>);		
+<a name="80" href="#80">80</a>  		johnSmith.setChildren(<strong>new</strong> <a href="../../../../../net/sf/morph/examples/person/PersonDAO.html">PersonDAO</a>[] { matthew, natalie });
+<a name="81" href="#81">81</a>  		johnSmith.setAddresses(<strong>new</strong> <a href="../../../../../net/sf/morph/examples/person/AddressDAO.html">AddressDAO</a>[] { home, work });
+<a name="82" href="#82">82</a>  		johnSmith.setVehicles(<strong>new</strong> <a href="../../../../../net/sf/morph/examples/person/VehicleDAO.html">VehicleDAO</a>[] { fordTaurus, hondaCivic });
+<a name="83" href="#83">83</a>  	}
+<a name="84" href="#84">84</a>  	
+<a name="85" href="#85">85</a>  	<strong>protected</strong> <strong>void</strong> setUpTransformer() {
+<a name="86" href="#86">86</a>  		<em class="comment">// this is the overall transformer we'll use to do the graph copy</em>
+<a name="87" href="#87">87</a>  		graphTransformer = <strong>new</strong> SimpleDelegatingTransformer();
+<a name="88" href="#88">88</a>  		
+<a name="89" href="#89">89</a>  		<em class="comment">// AddressDAO[] to String</em>
+<a name="90" href="#90">90</a>  		AddressDAOArrayToStringConverter addressConverter =
+<a name="91" href="#91">91</a>  			<strong>new</strong> <a href="../../../../../net/sf/morph/examples/person/AddressDAOArrayToStringConverter.html">AddressDAOArrayToStringConverter</a>();		
+<a name="92" href="#92">92</a>  		<em class="comment">// PersonDAO[] to PersonVO[]</em>
+<a name="93" href="#93">93</a>  		PropertyNameMappingCopier personCopier = <strong>new</strong> <a href="../../../../../net/sf/morph/examples/person/PersonDAOToPersonVOCopier.html">PersonDAOToPersonVOCopier</a>();
+<a name="94" href="#94">94</a>  		Map personMapping = <strong>new</strong> HashMap();
+<a name="95" href="#95">95</a>  		personMapping.put(<span class="string">"children"</span>, <span class="string">"children"</span>);
+<a name="96" href="#96">96</a>  		personMapping.put(<span class="string">"addresses"</span>, <span class="string">"primaryAddress"</span>);
+<a name="97" href="#97">97</a>  		personMapping.put(<span class="string">"vehicles"</span>, <span class="string">"vehicles"</span>);		
+<a name="98" href="#98">98</a>  		personCopier.setMapping(personMapping);
+<a name="99" href="#99">99</a>  		personCopier.setNestedTransformer(graphTransformer);
+<a name="100" href="#100">100</a> 
+<a name="101" href="#101">101</a> 		<em class="comment">// the list of transformers that are involved in our overall graph</em>
+<a name="102" href="#102">102</a> 		<em class="comment">// transformation</em>
+<a name="103" href="#103">103</a> 		List transformers = <strong>new</strong> ArrayList();
+<a name="104" href="#104">104</a> 		<em class="comment">// always put your custom transformers first</em>
+<a name="105" href="#105">105</a> 		transformers.add(personCopier);
+<a name="106" href="#106">106</a> 		transformers.add(addressConverter);
+<a name="107" href="#107">107</a> 		
+<a name="108" href="#108">108</a> 		<em class="comment">// then put in the default set of transformers as listed in the</em>
+<a name="109" href="#109">109</a> 		<em class="comment">// SimpleDelegatingTransformer.  this makes sure all the normal conversions</em>
+<a name="110" href="#110">110</a> 		<em class="comment">// you would expect from Morph are available (e.g. Integer 1 -> Long 1)</em>
+<a name="111" href="#111">111</a> 		transformers.add(<strong>new</strong> DefaultToBooleanConverter());
+<a name="112" href="#112">112</a> 		transformers.add(<strong>new</strong> IdentityConverter());
+<a name="113" href="#113">113</a> 		transformers.add(<strong>new</strong> DefaultToTextConverter());
+<a name="114" href="#114">114</a> 		transformers.add(<strong>new</strong> TextToNumberConverter());
+<a name="115" href="#115">115</a> 		transformers.add(<strong>new</strong> NumberConverter());
+<a name="116" href="#116">116</a> 		transformers.add(<strong>new</strong> TextConverter());
+<a name="117" href="#117">117</a> 		<em class="comment">// will automatically take care of PersonDAO[] to String[]</em>
+<a name="118" href="#118">118</a> 		transformers.add(<strong>new</strong> ContainerCopier());
+<a name="119" href="#119">119</a> 		<em class="comment">// will automatically take care of VehicleDAO[] to VehicleVO[]</em>
+<a name="120" href="#120">120</a> 		transformers.add(<strong>new</strong> PropertyNameMatchingCopier());
+<a name="121" href="#121">121</a> 
+<a name="122" href="#122">122</a> 		<em class="comment">// convert our list of transformers into an array</em>
+<a name="123" href="#123">123</a> 		Transformer[] transformerArray = (Transformer[]) transformers.toArray(
+<a name="124" href="#124">124</a> 			<strong>new</strong> Transformer[transformers.size()]);
+<a name="125" href="#125">125</a> 		graphTransformer.setComponents(transformerArray);
+<a name="126" href="#126">126</a> 	}
+<a name="127" href="#127">127</a> 
+<a name="128" href="#128">128</a> 	<strong>public</strong> <strong>void</strong> testTransformation() throws Exception {
+<a name="129" href="#129">129</a> 		<em class="comment">// copy the information from personDAO to personVO</em>
+<a name="130" href="#130">130</a> 		PersonVO johnSmithVO = <strong>new</strong> <a href="../../../../../net/sf/morph/examples/person/PersonVO.html">PersonVO</a>();
+<a name="131" href="#131">131</a> 		graphTransformer.copy(johnSmithVO, johnSmith);
+<a name="132" href="#132">132</a> 		
+<a name="133" href="#133">133</a> 		TestUtils.assertEquals(johnSmithVO.getName(), <span class="string">"John A. Smith"</span>);
+<a name="134" href="#134">134</a> 		TestUtils.assertEquals(johnSmithVO.getPrimaryAddress(), <span class="string">"1 Home St"</span>);
+<a name="135" href="#135">135</a> 		
+<a name="136" href="#136">136</a> 		String[] childrenNames = johnSmithVO.getChildren();
+<a name="137" href="#137">137</a> 		TestUtils.assertEquals(childrenNames[0], <span class="string">"Matthew"</span>);
+<a name="138" href="#138">138</a> 		TestUtils.assertEquals(childrenNames[1], <span class="string">"Natalie"</span>);
+<a name="139" href="#139">139</a> 		
+<a name="140" href="#140">140</a> 		VehicleVO[] vehicles = johnSmithVO.getVehicles();
+<a name="141" href="#141">141</a> 		TestUtils.assertEquals(vehicles[0].getModel(), <span class="string">"Taurus"</span>);
+<a name="142" href="#142">142</a> 		TestUtils.assertEquals(vehicles[1].getModel(), <span class="string">"Civic"</span>);
+<a name="143" href="#143">143</a> 	}
+<a name="144" href="#144">144</a> }
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+

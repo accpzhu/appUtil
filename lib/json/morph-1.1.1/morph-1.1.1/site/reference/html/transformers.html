@@ -1,0 +1,187 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Chapter&nbsp;2.&nbsp;Transformers</title><link rel="stylesheet" href="../styles/html.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.60.1"><link rel="home" href="index.html" title="The Morph Framework"><link rel="up" href="index.html" title="The Morph Framework"><link rel="previous" href="introduction.html" title="Chapter&nbsp;1.&nbsp;Introduction"><link rel="next" href="wrappers.html" title="Chapter&nbsp;3.&nbsp;Wrappers"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter&nbsp;2.&nbsp;Transformers</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="introduction.html">Prev</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="wrappers.html">Next</a></td></tr></table><hr></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a name="transformers"></a>Chapter&nbsp;2.&nbsp;Transformers</h2></div></div><div></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="transformers-introduction"></a>2.1.&nbsp;Introduction</h2></div></div><div></div></div><p>A transformer transforms information taken from a source and makes it available at a destination.  There are two main types of Transformers: Converters and Copiers.  Converters convert an object of one type to a new object of a different type.  Copiers copy information from an existing object to an existing object of a different type.  Before we get into the reason for having two types of Transformers, let's take a closer look at Converters.</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="transformers-converters"></a>2.2.&nbsp;The Converter Interface</h2></div></div><div></div></div><p>As previously mentioned, Converters allow an object of one type to be converted to an object of a different type.  Here is the Converter interface:</p><pre class="programlisting">
+public interface Converter extends Transformer {
+
+	public Object convert(Class destinationClass, Object source, Locale locale)
+		throws TransformationException;
+
+}
+		</pre><p>As you can see, the Converter interface is very simple.  By calling the convert method you are saying, "convert <tt class="literal">source</tt> into a new instance of <tt class="literal">destinationClass</tt>".  This is the interface to use when you're doing a simple conversion from one basic type to another.  For example, Morph includes converters that will convert a String to an int (<tt class="literal">TextToNumberConverter</tt>), a String to a StringBuffer (<tt class="literal">TextConverter</tt>) and many other converters.</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="transformers-copiers"></a>2.3.&nbsp;The Copier Interface</h2></div></div><div></div></div><p>Now let's take a look at the Copier interface:</p><pre class="programlisting">
+public interface Copier extends Transformer {
+
+	public void copy(Object destination, Object source, Locale locale)
+		throws TransformationException;
+
+}
+		</pre><p>The Copier interface is just as simple as the Converter interface.  A call to the copy method basically means, "copy the information from the <tt class="literal">source</tt> to the existing <tt class="literal">destination</tt>.  Copiers are used when you want to avoid or cannot create a new instance of the destination object.  For example, if you want to copy the information in a <tt class="literal">Map</tt> to a <tt class="literal">HttpServletRequest</tt>'s attributes, you can't create a new <tt class="literal">HttpServletRequest</tt> request object, because the servlet container already creates the request object, and you can't create your own.  An example of when you could but wouldn't want to create a new instance of the destination object is if you have multiple source objects that you want to be combined into one destination object.  For example, if you had information in three different <tt class="literal">Map</tt>s that you would like copied to a single destination business object, you could call the copy operation multiple times with your existing business object as the destination object for all three copy operations.</p><p>Now that we've gone over why there are two different types of Transformers, let's make a simple rule of thumb you can use to determine if you should implement a Copier or a Converter: <span class="emphasis"><em>always prefer the Copier interface</em></span>.  In other words, if the transformation you're writing can be expressed as a Copier, you should implement the Copier interface.  This is because any copier can easily implement the convert operation: just create a new instance of the destination class, and then call the copy operation.  In fact, if you subclass the <tt class="literal">BaseCopier</tt>, you will just have to implement the contract for the copy operation and the <tt class="literal">Converter</tt> interface will be automatically exposed for you.</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="transformers-internationalization"></a>2.4.&nbsp;Internationalization</h2></div></div><div></div></div><p>You may have noticed that both the convert and copy operations have a <tt class="literal">locale</tt> parameter.  This parameter is useful when you need to internationalize your application.  For example, to convert a Double to a String, you can use the <tt class="literal">Morph.convertToString(Object, Locale)</tt> method which will delegate to the <tt class="literal">NumberToTextConverter</tt>.  Now let's say you want the format of the textual representation of the number to be customized according to the locale of your application's users: English speakers use a period as the decimal separator and Spanish speakers use a comma.  By passing in the correct <tt class="literal">locale</tt>, English users will see the Double 3564.12 as 3564.12 and Spanish users will see that same Double as 3564,12.  You can customize the <tt class="literal">NumberToTextConverter</tt> by subclassing it and overriding its <tt class="literal">getNumberFormat</tt> method.  For example, you could customize the converter to include a thousands separator or round decimals to a certain number of digits.</p><p>If you don't know the locale of your user or the locale isn't important, you can simply pass <tt class="literal">null</tt> in as the Locale.</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="transformers-transformers"></a>2.5.&nbsp;The Transformer Interface</h2></div></div><div></div></div><p>So far we've skipped over the base interface for Converters and Copiers to highlight the differences between the two interfaces.  Now let's look at the similarities by examining the Transformer interface:</p><pre class="programlisting">
+public interface Transformer extends Component {
+
+	public Class[] getSourceClasses();
+
+	public Class[] getDestinationClasses();
+
+}
+		</pre><p>These methods allow a transformer to specify the types of transformations it is capable of performing.</p><p>This is a different than the one taken by other frameworks.  In other frameworks, a transformer is responsible for performing a transformation and a separate registry is used to indicate which transformers can do which transformations.  This is like having a restaurant where each person is allowed to eat, but isn't allowed to say what they like to eat.  The restaurant's host examines each person and decides what that person will be served without consulting that person.  As you can imagine, this gets pretty ugly pretty quick.  Logically, each person in the restaurant knows what he or she wants to eat, so why not let them decide?</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="transformers-combining"></a>2.6.&nbsp;Combining Transformers</h2></div></div><div></div></div><p>Transformers are easy to use directly with Morph, but we don't always know exactly what we're converting ahead-of-time.  For example, if I have a bunch of objects I want to convert to Strings at once, I don't want to have to write a lengthy if/then statement that picks the right converter.  I'd rather just write <tt class="literal">convert(String.class, source, locale)</tt> and have the correct Converter chosen for me.  To solve this problem, other frameworks introduced a registry where you state which transformers can be used for which transformations.  This solves the problem of choosing how to pick a converter, but as we saw in our restaurant example, it introduces problems of its own.</p><p>Morph's solution to this problem is the <tt class="literal">DelegatingTransformer</tt>.  It's a Transformer just like the other Transformers we've looked at, but instead of doing transformations itself, it delegates to other Transformers.  Continuing with our restaurant example, the DelegatingTransformer is like a buffet.  Each person that enters the restaurant gets in line for the buffet and each person gets to choose what they would like to eat.  Now to really stretch this metaphor: the trick is to arrange the line in such a way that everyone's happy.  Put the picky eaters in the front of the line so they can get what they like to eat, and put your puppy that will eat anything at the back of the line so that everything gets eaten.</p><p>Now let's flee from this crazy restaurant and talk about transformations again.  Morph includes both a <tt class="literal">NumberToTextConverter</tt> and a <tt class="literal">ObjectToTextConverter</tt>.  The <tt class="literal">ObjectToTextConverter</tt> just calls an Object's <tt class="literal">toString</tt> method, whereas the <tt class="literal">NumberToTextConverter</tt> nicely formats a number based on a user's locale.  Clearly, if we're converting a bunch of objects to Strings, we want the <tt class="literal">NumberToTextConverter</tt> to get chosen if the object to be converted is a number.  If the object is not a number, we can fall back to the <tt class="literal">ObjectToTextConverter</tt>.  We specify all this behavior simply by setting the <tt class="literal">delegates</tt> property of the <tt class="literal">DelegatingTransformer</tt>.  The delegates are arranged in order of precedence.  When the <tt class="literal">DelegatingTransformer</tt> does a transformation, it goes to each transformer in turn and asks if it can perform the requested transformation.  If the transformer reaches the end of the list but couldn't find any transformers to do the requested transformation, a <tt class="literal">TransformationException</tt> is thrown.</p></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="transformers-implemented"></a>2.7.&nbsp;Transformer Implementations</h2></div></div><div></div></div><p>Morph comes with many Transformers pre-built so that hopefully you won't have to implement any yourself.  In this section we'll briefly examine the transformers that are bundled with Morph, and see how to write our own.</p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="transformers-implemented-converters"></a>2.7.1.&nbsp;Pre-Built Converters</h3></div></div><div></div></div><p>The Converters included with Morph work with all the basic Java types: primitives, Characters, Strings, StringBuffers, Dates, Calendars, Numbers, Iterators, and Enumerators.  For a complete list, see the JavaDoc of the <tt class="literal">net.sf.morph.transform.converters</tt> package.  To get an idea at a glance of what you can convert to what, see the chart below.  An arrow from one type to another indicates that a conversion in that direction is possible.  For example, Numbers can be converted to Booleans, but not the other way around.</p><p>
+				</p><div class="mediaobject" align="center"><img src="images/converters.png" align="middle"><div class="caption"><p>Converters included with Morph</p></div></div><p>
+			</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="transformers-implemented-copiers"></a>2.7.2.&nbsp;Pre-Built Copiers</h3></div></div><div></div></div><p>The Copiers included with Morph are focused on transferring information between <span class="emphasis"><em>bean-like</em></span> objects and <span class="emphasis"><em>container-like</em></span> objects.  Bean-like objects can be copied using the <tt class="literal">PropertyNameMatchingCopier</tt>, which copies information from one object to another based on matching up property names in the source and destination objects.  For example, if you had a PersonDAO data access object and a Person domain object that each had the properties firstName, middleName and lastName, the <tt class="literal">PropertyNameMatchingCopier</tt> would take care of copying the information to and from those two objects automatically.</p><p>If the properties don't match, you can use the <tt class="literal">PropertyNameMappingCopier</tt>.  For example, if PersonDAO used firstName, middleName and lastName as property names and Person used firstName middleName and familyName, the PropertyNameMappingCopier can be customized to do this conversion by setting its <tt class="literal">mapping</tt> property.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="transformers-creating"></a>2.7.3.&nbsp;Writing Custom Transformers</h3></div></div><div></div></div><p>If you need to write a custom transformer, it's easy since Copiers and Converters have such simple interfaces.  We recommend you try to extend an existing, pre-built transformer, but if you can't find one that does what you need you can also directly subclass <tt class="literal">BaseConverter</tt> or <tt class="literal">BaseCopier</tt>.  See the JavaDoc for <tt class="literal">BaseTransformer</tt> for more information.</p></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="transformers-graphs"></a>2.8.&nbsp;Transforming Arbitrary Object Graphs</h2></div></div><div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="transformers-graph-introduction"></a>2.8.1.&nbsp;Introduction</h3></div></div><div></div></div><p>When information is passed between different tiers of an application, it often needs to be transformed into a different format.  Essentially, what you need to do is transform one graph of objects into a different graph of objects with similar information.  Without Morph, this type of code can quickly become a big mess that is difficult to modify when the structure of either object graph is changed.  Morph helps isolate each of the different types of transformations that are happening using a divide-and-conquer approach.  Instead of writing one massive method that does the transformation, you write several Transformer classes, each of which is concerned only with transforming one node in the object graph from one type to another.  You then combine all these Transformers using the <tt class="literal">DelegatingTransformer</tt>.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="transformers-graph-example"></a>2.8.2.&nbsp;Example</h3></div></div><div></div></div><p>In this section we'll look at an example of transforming a data access object that holds information from a database into a value object to be exposed as part of a web service.  Note that this example has been made intentionally as difficult as possible.  Most use cases will require far fewer custom transformers to be written.  You can see this example in action by examining the <tt class="literal">net.sf.morph.examples.person.PersonExampleTestCase</tt>.</p><p>Now let's get started.  Below are our example objects, a PersonDAO (Person data access object) and a PersonVO (Person value object):</p><p>
+				</p><div class="mediaobject" align="center"><img src="images/graph-classes.png" align="middle"><div class="caption"><p>The PersonDAO and PersonVO classes</p></div></div><p>
+			</p><p>Below is an example PersonDAO object that represents John A. Smith.  As we can see, his firstName is John, his middleName is A. and his lastName is Smith.  His credit card number is 5555 5555 5555 5555.  He has two children, Matthew and Natalie, a home and work address, a Ford Taurus, and a Honda Civic.</p><p>
+				</p><div class="mediaobject" align="center"><img src="images/graph-persondao.png" align="middle"><div class="caption"><p>John A. Smith represented as a PersonDAO</p></div></div><p>
+			</p><p>We would like to convert John's PersonDAO into a PersonVO, like the one shown below.  Notice the creditCardNumber information is removed and his firstName, middleName and lastName have been combined to provide a single name.  Similarly, all his address information was squished into a single String by listing only his primaryAddress, and converting it to a String representation.  Finally, his Ford Taurus and Honda Civic are now just a Taurus and a Civic, because in our VehicleVO we decided we didn't need to include information about the vehicle's manufacturer.</p><p>
+				</p><div class="mediaobject" align="center"><img src="images/graph-personvo.png" align="middle"><div class="caption"><p>John A. Smith represented as a PersonVO</p></div></div><p>
+			</p><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e436"></a>2.8.2.1.&nbsp;Transforming VehicleDAO[] to VehicleVO[]</h4></div></div><div></div></div><p>First we'll focus on converting the vehicles property of the PersonDAO to the vehicles property of the PersonVO.  We'll assume for this example that the <tt class="literal">VehicleDAO</tt> can be converted to a <tt class="literal">VehicleVO</tt> by simply using the <tt class="literal">PropertyNameMatchingCopier</tt>.  If this is the case, the <tt class="literal">ContainerCopier</tt> will be able to use the <tt class="literal">PropertyNameMatchingCopier</tt> to convert the <tt class="literal">VehicleDAO[]</tt> to a <tt class="literal">VehicleVO[]</tt> without any further effort on our part.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e462"></a>2.8.2.2.&nbsp;Transforming PersonDAO[] to String[]</h4></div></div><div></div></div><p>For the children property of the <tt class="literal">PersonDAO</tt>, we will need to convert a <tt class="literal">PersonDAO[]</tt> array to <tt class="literal">String[]</tt>.  If we assume that a <tt class="literal">PersonDAO</tt> can be converted to a <tt class="literal">String</tt> by simply calling the object's <tt class="literal">toString</tt> method, the <tt class="literal">ContainerCopier</tt> can do this conversion.  It will automatically delegate to the <tt class="literal">ObjectToTextConverter</tt> to handle the <tt class="literal">PersonDAO</tt> to String conversion.  If we want to write a different converter to handle the <tt class="literal">PersonDAO</tt> to <tt class="literal">String</tt> conversion, we can configure a <tt class="literal">ContainerCopier</tt> to use it by setting the <tt class="literal">ContainerCopier</tt>'s <tt class="literal">graphTransformer</tt> property.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e509"></a>2.8.2.3.&nbsp;Transforming AddressDAO[] to String</h4></div></div><div></div></div><p>Now we'll focus on copying the PersonDAO.addresses property to the VehicleVO.primaryAddress property.  We will also assume that a PersonDAO can be converted to a String by calling the object's toString method.  We will have to write our own converter that takes a <tt class="literal">PersonDAO[]</tt> and transforms it to a String:</p><pre class="programlisting">
+public class AddressDAOArrayToStringConverter extends BaseConverter {
+
+	protected Object convertImpl(Class destinationClass, Object source,
+		Locale locale) throws Exception {
+		
+		// the BaseConverter will make sure the source is of the correct type
+		// for us, so we can just do a cast here with no error checking
+		AddressDAO[] addresses = (AddressDAO[]) source;
+		// we can also assume the source is not null, because we didn't
+		// explicitly state that null was a valid source class
+		AddressDAO address = addresses[0];
+		// now we convert the first address to a String
+		return address.toString();
+		
+	}
+
+	protected Class[] getSourceClassesImpl() throws Exception {
+		// if we wanted this converter to also handle converting null values
+		// to Strings, we could write this line as:
+		//
+		//      return new Class[] { AddressDAO[].class, null };
+		return new Class[] { AddressDAO[].class };
+	}
+
+	protected Class[] getDestinationClassesImpl() throws Exception {
+		return new Class[] { String.class };
+	}
+
+}
+				</pre></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="d0e519"></a>2.8.2.4.&nbsp;Transforming PersonDAO[] to PersonVO[]</h4></div></div><div></div></div><p>Now that we know which converters we need to transform the properties of a <tt class="literal">PersonDAO</tt> to the properties of a <tt class="literal">PersonVO</tt>, we are ready to transform our top-level <tt class="literal">PersonDAO</tt> object into a top-level <tt class="literal">PersonVO</tt> object.  We will be able to use the <tt class="literal">PropertyNameMappingCopier</tt> to do most of the work, but we will need to subclass it to handle the conversion of the PersonDAO.firstName, personDAO.middleName and personDAO.lastName properties into a single PersonVO.name property.  Here is our top-level converter:</p><pre class="programlisting">
+public class PersonDAOToPersonVOCopier extends PropertyNameMappingCopier {
+
+	protected void copyImpl(Object destination, Object source, Locale locale)
+		throws TransformationException {
+		
+		super.copyImpl(destination, source, locale);
+		
+		// this cast is safe because our superclass makes sure the source is of
+		// the correct type and not null
+		PersonDAO personDAO = (PersonDAO) source;
+		// construct the name
+		String name = personDAO.getFirstName() + " "
+			+ personDAO.getMiddleName() + " " + personDAO.getLastName();
+		
+		// this cast is safe because our superclass makes sure the destination
+		// is of the correct type and not null
+		PersonVO personVO = (PersonVO) destination;
+		// save the name
+		personVO.setName(name);
+		
+	}
+	
+	protected Class[] getDestinationClassesImpl() throws Exception {
+		return new Class[] { PersonVO.class };
+	}
+	
+	protected Class[] getSourceClassesImpl() throws Exception {
+		return new Class[] { PersonDAO.class };
+	}
+	
+}
+				</pre><p>Now that we have all our transformers written, we can go about performing our graph transformation.  We can do everything programmatically, or we can use a dependency injection framework.  Here is the code we'll need to do things programmatically:</p><pre class="programlisting">
+// this is the overall transformer we'll use to do the graph copy
+DelegatingTransformer graphTransformer = new DelegatingTransformer();
+
+// AddressDAO[] to String
+AddressDAOArrayToStringConverter addressConverter =
+	new AddressDAOArrayToStringConverter();		
+// PersonDAO[] to PersonVO[]
+PropertyNameMappingCopier personCopier = new PersonDAOToPersonVOCopier();
+Map personMapping = new HashMap();
+personMapping.put("children", "children");
+personMapping.put("addresses", "primaryAddress");
+personMapping.put("vehicles", "vehicles");		
+personCopier.setMapping(personMapping);
+personCopier.setGraphTransformer(graphTransformer);
+
+// the list of transformers that are involved in our overall graph
+// transformation
+List transformers = new ArrayList();
+// always put your custom transformers first
+transformers.add(personCopier);
+transformers.add(addressConverter);
+
+// then put in the default set of transformers as listed in the
+// DelegatingTransformer.  this makes sure all the normal conversions
+// you would expect from Morph are available (e.g. Integer 1 -&gt; Long 1)
+transformers.add(new DefaultToBooleanConverter());
+transformers.add(new NullConverter());
+transformers.add(new IdentityConverter());
+transformers.add(new DefaultToTextConverter());
+transformers.add(new TextToNumberConverter());
+transformers.add(new NumberConverter());
+transformers.add(new TraverserConverter());
+transformers.add(new TextConverter());
+// will automatically take care of PersonDAO[] to String[]
+transformers.add(new ContainerCopier());
+// will automatically take care of VehicleDAO[] to VehicleVO[]
+transformers.add(new PropertyNameMatchingCopier());
+
+// convert our list of transformers into an array
+Transformer[] transformerArray = (Transformer[]) transformers.toArray(
+	new Transformer[transformers.size()]);
+graphTransformer.setComponents(transformerArray);
+
+// copy the information from personDAO to personVO
+graphTransformer.copy(personVO, personDAO);
+				</pre><p>Below is essentially the same code using Spring.  The code may not be much shorter, but I feel it's clearer</p><pre class="programlisting">
+&lt;beans&gt;
+
+	&lt;!-- VehicleDAO[] to VehicleVO[] --&gt;
+	&lt;bean
+		id="vehicleCopier"
+		class="net.sf.morph.transform.copiers.PropertyNameMatchingCopier"/&gt;
+	&lt;!-- PersonDAO[] to String[] --&gt;
+	&lt;bean
+		id="childrenCopier"
+		class="net.sf.morph.transform.copiers.ContainerCopier"/&gt;
+	&lt;!-- AddressDAO[] to String --&gt;
+	&lt;bean
+		id="addressCopier"
+		class="net.sf.morph.examples.person.AddressDAOArrayToStringConverter"/&gt;
+	&lt;!-- PersonDAO[] to PersonVO[] --&gt;
+	&lt;bean
+		id="personCopier"
+		class="net.sf.morph.examples.person.PersonDAOToPersonVOCopier"&gt;
+		&lt;property name="mapping"&gt;
+			&lt;map&gt;
+				&lt;entry key="children" value="children"/&gt;
+				&lt;entry key="address" value="primaryAddress"/&gt;
+				&lt;entry key="vehicles" value="vehicles"/&gt;
+			&lt;/list&gt;
+		&lt;/property&gt;
+		&lt;property name="graphTransformer"&gt;
+			&lt;ref bean="graphTransformer"/&gt;
+		&lt;/property&gt;
+	&lt;/bean&gt;
+
+	&lt;!-- the overall transformer we'll use to do the graph copy --&gt;
+	&lt;bean
+		id="graphTransformer"
+		class="net.sf.morph.transform.DelegatingCopier"&gt;
+		&lt;property name="components"&gt;
+			&lt;list&gt;
+				&lt;ref bean="personCopier"/&gt;
+				&lt;ref bean="vehicleCopier"/&gt;
+				&lt;ref bean="childrenCopier"/&gt;
+				&lt;ref bean="addressConverter"/&gt;
+			&lt;/list&gt;
+		&lt;/property&gt;
+	&lt;/bean&gt;
+	
+&lt;/beans&gt;
+				</pre></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="introduction.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="index.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="wrappers.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter&nbsp;1.&nbsp;Introduction&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;Chapter&nbsp;3.&nbsp;Wrappers</td></tr></table></div></body></html>

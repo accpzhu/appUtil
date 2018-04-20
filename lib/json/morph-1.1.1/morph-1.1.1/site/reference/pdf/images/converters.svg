@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20000303 Stylable//EN"
+"http://www.w3.org/TR/2000/03/WD-SVG-20000303/DTD/svg-20000303-stylable.dtd">
+
+<svg width="5.3611in" height="3.2687in" viewBox="0 0 515 314">
+
+<path style="fill:#bbe0e3" d="M136,176 l0,39 67,0 0,-39 -67,0z" />
+<path style="fill:none;stroke:#000;stroke-width:2" d="M136,176 l0,39 67,0 0,-39z" />
+<path style="fill:#bbe0e3" d="M200,80 l0,39 108,0 0,-39 -108,0z" />
+<path style="fill:none;stroke:#000;stroke-width:2" d="M200,80 l0,39 108,0 0,-39z" />
+<path style="fill:#bbe0e3" d="M200,0 l0,39 105,0 0,-39 -105,0z" />
+<path style="fill:none;stroke:#000;stroke-width:2" d="M200,0 l0,39 105,0 0,-39z" />
+<path style="fill:#bbe0e3" d="M296,176 l0,39 89,0 0,-39 -89,0z" />
+<path style="fill:none;stroke:#000;stroke-width:2" d="M296,176 l0,39 89,0 0,-39z" />
+<path style="fill:#bbe0e3" d="M392,272 l0,39 120,0 0,-39 -120,0z" />
+<path style="fill:none;stroke:#000;stroke-width:2" d="M392,272 l0,39 120,0 0,-39z" />
+<path style="fill:#bbe0e3" d="M0,176 l0,39 80,0 0,-39 -80,0z" />
+<path style="fill:none;stroke:#000;stroke-width:2" d="M0,176 l0,39 80,0 0,-39z" />
+<path style="fill:#000;fill-rule:evenodd;stroke:#000;stroke-width:2" d="M136,196 l-48,0 -1,0 0,-1 0,0 1,0 48,0 0,0 0,0 0,1 0,0 0,0z M93,202 l-13,-7 13,-6 0,13z " />
+<path style="fill:#000;fill-rule:evenodd;stroke:#000;stroke-width:2" d="M296,196 l-85,0 -1,0 0,-1 0,0 1,0 85,0 0,0 0,0 0,1 0,0 0,0z M216,202 l-13,-7 13,-6 0,13z " />
+<path style="fill:#000;fill-rule:evenodd;stroke:#000;stroke-width:2" d="M253,39 l1,33 0,0 -1,0 0,0 0,0 -1,-33 0,0 0,-1 1,1 0,0 0,0z M260,66 l-6,14 -7,-14 13,0z " />
+<path style="fill:#000;fill-rule:evenodd;stroke:#000;stroke-width:2" d="M340,176 l-80,-52 0,0 0,-1 0,0 1,0 80,52 0,0 0,1 0,0 -1,0 0,0z M261,132 l-7,-13 15,2 -8,11z " />
+<path style="fill:#bbe0e3" d="M224,272 l0,39 124,0 0,-39 -124,0z" />
+<path style="fill:none;stroke:#000;stroke-width:2" d="M224,272 l0,39 124,0 0,-39z" />
+<path style="fill:#000;fill-rule:evenodd;stroke:#000;stroke-width:2" d="M348,291 l36,0 0,0 0,0 0,1 0,0 -36,0 -1,0 0,-1 0,0 1,0 0,0z M378,285 l14,6 -14,7 0,-13z " />
+<path style="fill:#000;fill-rule:evenodd;stroke:#000;stroke-width:2" d="M285,272 l-109,-53 0,0 0,-1 0,0 1,0 109,53 0,0 0,1 0,0 -1,0 0,0z M178,227 l-9,-12 15,0 -6,12z " />
+<path style="fill:#bbe0e3" d="M40,272 l0,39 73,0 0,-39 -73,0z" />
+<path style="fill:none;stroke:#000;stroke-width:2" d="M40,272 l0,39 73,0 0,-39z" />
+<path style="fill:#000;fill-rule:evenodd;stroke:#000;stroke-width:2" d="M163,220 l-79,48 -1,0 0,0 0,-1 0,0 79,-48 0,0 1,0 0,0 0,1 0,0z M154,216 l15,-1 -8,13 -7,-12z M91,270 l-15,2 8,-13 7,11z " />
+<path style="fill:#000;fill-rule:evenodd;stroke:#000;stroke-width:2" d="M175,171 l72,-48 0,0 1,0 0,1 -1,0 -71,48 0,0 -1,-1 0,0 0,0 0,0z M184,174 l-15,2 7,-13 8,11z M239,121 l15,-2 -8,13 -7,-11z " />
+<path style="fill:#bbe0e3" d="M136,176 l0,39 67,0 0,-39 -67,0z" />
+<path style="fill:none;stroke:#000;stroke-width:2" d="M136,176 l0,39 67,0 0,-39z" />
+<path style="fill:#bbe0e3" d="M200,80 l0,39 108,0 0,-39 -108,0z" />
+<path style="fill:none;stroke:#000;stroke-width:2" d="M200,80 l0,39 108,0 0,-39z" />
+<path style="fill:#bbe0e3" d="M200,0 l0,39 105,0 0,-39 -105,0z" />
+<path style="fill:none;stroke:#000;stroke-width:2" d="M200,0 l0,39 105,0 0,-39z" />
+<path style="fill:#bbe0e3" d="M296,176 l0,39 89,0 0,-39 -89,0z" />
+<path style="fill:none;stroke:#000;stroke-width:2" d="M296,176 l0,39 89,0 0,-39z" />
+<path style="fill:#bbe0e3" d="M392,272 l0,39 120,0 0,-39 -120,0z" />
+<path style="fill:none;stroke:#000;stroke-width:2" d="M392,272 l0,39 120,0 0,-39z" />
+<path style="fill:#bbe0e3" d="M0,176 l0,39 80,0 0,-39 -80,0z" />
+<path style="fill:none;stroke:#000;stroke-width:2" d="M0,176 l0,39 80,0 0,-39z" />
+<path style="fill:#000;fill-rule:evenodd;stroke:#000;stroke-width:2" d="M136,196 l-48,0 -1,0 0,-1 0,0 1,0 48,0 0,0 0,0 0,1 0,0 0,0z M93,202 l-13,-7 13,-6 0,13z " />
+<path style="fill:#000;fill-rule:evenodd;stroke:#000;stroke-width:2" d="M296,196 l-85,0 -1,0 0,-1 0,0 1,0 85,0 0,0 0,0 0,1 0,0 0,0z M216,202 l-13,-7 13,-6 0,13z " />
+<path style="fill:#000;fill-rule:evenodd;stroke:#000;stroke-width:2" d="M253,39 l1,33 0,0 -1,0 0,0 0,0 -1,-33 0,0 0,-1 1,1 0,0 0,0z M260,66 l-6,14 -7,-14 13,0z " />
+<path style="fill:#000;fill-rule:evenodd;stroke:#000;stroke-width:2" d="M340,176 l-80,-52 0,0 0,-1 0,0 1,0 80,52 0,0 0,1 0,0 -1,0 0,0z M261,132 l-7,-13 15,2 -8,11z " />
+<path style="fill:#bbe0e3" d="M224,272 l0,39 124,0 0,-39 -124,0z" />
+<path style="fill:none;stroke:#000;stroke-width:2" d="M224,272 l0,39 124,0 0,-39z" />
+<path style="fill:#000;fill-rule:evenodd;stroke:#000;stroke-width:2" d="M348,291 l36,0 0,0 0,0 0,1 0,0 -36,0 -1,0 0,-1 0,0 1,0 0,0z M378,285 l14,6 -14,7 0,-13z " />
+<path style="fill:#000;fill-rule:evenodd;stroke:#000;stroke-width:2" d="M285,272 l-109,-53 0,0 0,-1 0,0 1,0 109,53 0,0 0,1 0,0 -1,0 0,0z M178,227 l-9,-12 15,0 -6,12z " />
+<path style="fill:#bbe0e3" d="M40,272 l0,39 73,0 0,-39 -73,0z" />
+<path style="fill:none;stroke:#000;stroke-width:2" d="M40,272 l0,39 73,0 0,-39z" />
+<path style="fill:#000;fill-rule:evenodd;stroke:#000;stroke-width:2" d="M163,220 l-79,48 -1,0 0,0 0,-1 0,0 79,-48 0,0 1,0 0,0 0,1 0,0z M154,216 l15,-1 -8,13 -7,-12z M91,270 l-15,2 8,-13 7,11z " />
+<path style="fill:#000;fill-rule:evenodd;stroke:#000;stroke-width:2" d="M175,171 l72,-48 0,0 1,0 0,1 -1,0 -71,48 0,0 -1,-1 0,0 0,0 0,0z M184,174 l-15,2 7,-13 8,11z M239,121 l15,-2 -8,13 -7,-11z " />
+
+</svg>

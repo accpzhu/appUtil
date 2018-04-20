@@ -1,0 +1,3439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><title>Morph - JDepend Source Code Analysis</title><style type="text/css" media="all">
+          @import url("./style/maven-base.css");
+          
+          @import url("./style/maven-theme.css");</style><link rel="stylesheet" href="./style/print.css" type="text/css" media="print"></link><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"></meta><style type="text/css">.jdepend td ul, .jdepend td ul li { margin:0; padding:0; list-style-type: none; }</style></head><body class="jdepend"><div id="banner"><a href="http://www.sourceforge.net/" id="organizationLogo"><img alt="SourceForge" src="http://sourceforge.net/sflogo.php?group_id=124910&amp;type=5"></img></a><a href="http://morph.sourceforge.net/" id="projectLogo"><img alt="Morph" src="./images/morph.jpg"></img></a><div class="clear"><hr></hr></div></div><div id="breadcrumbs"><div class="xleft">Last published: 03 July 2008 16:05 CDT
+                <span class="separator">|</span> Doc for  1.1.1
+                </div><div class="xright"></div><div class="clear"><hr></hr></div></div><div id="leftColumn"><div id="navcolumn"><div id="menuMorph"><h5>Morph</h5><ul><li class="none"><a href="index.html">Introduction</a></li><li class="none"><a href="http://sourceforge.net/project/showfiles.php?group_id=124910" class="externalLink" title="External Link">Download</a></li><li class="none"><a href="history.html">History</a></li><li class="none"><a href="http://sourceforge.net/projects/morph" class="externalLink" title="External Link">SourceForge Site</a></li><li class="none"><a href="http://sourceforge.net/project/stats/?group_id=124910&amp;ugn=morph" class="externalLink" title="External Link">Activity Statistics</a></li></ul></div><div id="menuDocumentation"><h5>Documentation</h5><ul><li class="none"><a href="reference/html/index.html">Reference Doc (HTML)</a></li><li class="none"><a href="reference/pdf/morph-reference.pdf">Reference Doc (PDF)</a></li><li class="none"><a href="apidocs/index.html">JavaDoc</a></li><li class="none"><a href="xref/index.html">Browse Source</a></li></ul></div><div id="menuRelated_Projects"><h5>Related Projects</h5><ul><li class="expanded"><a href="alternatives/beanutils.html">BeanUtils</a><ul><li class="none"><a href="http://jakarta.apache.org/commons/beanutils/" class="externalLink" title="External Link">Homepage</a></li><li class="none"><a href="alternatives/beanutils.html">Comparison</a></li></ul></li><li class="expanded"><a href="alternatives/jexl.html">JEXL</a><ul><li class="none"><a href="http://jakarta.apache.org/commons/jexl/" class="externalLink" title="External Link">Homepage</a></li><li class="none"><a href="alternatives/jexl.html">Comparison</a></li></ul></li><li class="none"><a href="morphed_apps.html">Morphed Apps</a></li></ul></div><div id="menuTools"><h5>Tools</h5><ul><li class="none"><a href="http://www.cenqua.com/clover" class="externalLink" title="External Link">Clover</a></li></ul></div><div id="menuProject_Documentation"><h5>Project Documentation</h5><ul><li class="none"><a href="index.html">About</a></li><li class="collapsed"><a href="project-info.html">Project Info</a></li><li class="expanded"><a href="maven-reports.html">Project Reports</a><ul><li class="none"><strong><a href="jdepend-report.html">Metrics</a></strong></li><li class="none"><a href="checkstyle/index.html">Checkstyle</a></li><li class="none"><a href="changelog-report.html">Change Log</a></li><li class="none"><a href="developer-activity-report.html">Developer Activity</a></li><li class="none"><a href="file-activity-report.html">File Activity</a></li><li class="none"><a href="license.html">Project License</a></li><li class="none"><a href="apidocs/index.html" class="newWindow" title="New Window" target="_blank">JavaDocs</a></li><li class="none"><a href="javadoc.html">JavaDoc Report</a></li><li class="none"><a href="javadoc-warnings-report.html">JavaDoc Warnings Report</a></li><li class="none"><a href="xref/index.html" class="newWindow" title="New Window" target="_blank">Source Xref</a></li><li class="none"><a href="xref-test/index.html" class="newWindow" title="New Window" target="_blank">Test Xref</a></li><li class="none"><a href="junit-report.html">Unit Tests</a></li><li class="none"><a href="linkcheck.html">Link Check Report</a></li><li class="none"><a href="task-list.html">Task List</a></li></ul></li><li class="none"><a href="development-process.html">Development Process</a></li></ul></div><div id="legend"><h5>Legend</h5><ul><li class="externalLink">External Link</li><li class="newWindow">Opens in a new window</li></ul></div><a href="http://maven.apache.org/" title="Built by Maven" id="poweredBy"><img alt="Built by Maven" src="./images/logos/mavenlogo_builtby_w.png"></img></a></div></div><div id="bodyColumn"><div class="contentBox"><div class="section"><a name="Metric_Results"></a><h2>Metric Results</h2>
+      <p>[
+        <a href="#Summary">summary</a>] [
+        <a href="#Packages">packages</a>] [
+        <a href="#Cycles">cycles</a>] [
+        <a href="#Explanations">explanations</a>]
+      </p>
+      <p>The following document contains the results of a
+        <a href="http://www.clarkware.com/software/JDepend.html" class="externalLink" title="External Link">JDepend</a>metric analysis. The various metrics are defined at the bottom of this document.
+      </p>
+    </div><div class="section"><a name="Summary"></a><h2>Summary</h2>
+      <p>[
+        <a href="#Summary">summary</a>] [
+        <a href="#Packages">packages</a>] [
+        <a href="#Cycles">cycles</a>] [
+        <a href="#Explanations">explanations</a>]
+      </p>
+      <table class="bodyTable">
+        <thead>
+          <tr class="b">
+            <th title="Package">Package</th>
+            <th style="text-align:right">
+              <acronym title="Total Classes">TC</acronym>
+            </th>
+            <th style="text-align:right">
+              <acronym title="Abstract Classes">AC</acronym>
+            </th>
+            <th style="text-align:right">
+              <acronym title="Concrete Classes">CC</acronym>
+            </th>
+            <th style="text-align:right">
+              <acronym title="Afferent Couplings">AC</acronym>
+            </th>
+            <th style="text-align:right">
+              <acronym title="Efferent Couplings">EC</acronym>
+            </th>
+            <th style="text-align:right">
+              <acronym title="Abstractness">A</acronym>
+            </th>
+            <th style="text-align:right">
+              <acronym title="Instability">I</acronym>
+            </th>
+            <th style="text-align:right">
+              <acronym title="Distance">D</acronym>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="a">
+            <td>
+              <a href="#net_sf_morph">net.sf.morph</a>
+            </td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">17</td>
+            <td style="text-align:right">13</td>
+            <td style="text-align:right"> 0.67</td>
+            <td style="text-align:right"> 43%</td>
+            <td style="text-align:right"> 10%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#net_sf_morph_context">net.sf.morph.context</a>
+            </td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right"> 0.8</td>
+            <td style="text-align:right"> 50%</td>
+            <td style="text-align:right"> 30%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#net_sf_morph_context_contexts">net.sf.morph.context.contexts</a>
+            </td>
+            <td style="text-align:right">7</td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">14</td>
+            <td style="text-align:right"> 0.29</td>
+            <td style="text-align:right"> 88%</td>
+            <td style="text-align:right"> 16%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#net_sf_morph_context_support">net.sf.morph.context.support</a>
+            </td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right"> 0</td>
+            <td style="text-align:right"> 83%</td>
+            <td style="text-align:right"> 17%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#net_sf_morph_integration_commons_beanutils">net.sf.morph.integration.commons.beanutils</a>
+            </td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right"> 0</td>
+            <td style="text-align:right"> 83%</td>
+            <td style="text-align:right"> 17%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#net_sf_morph_integration_commons_collections">net.sf.morph.integration.commons.collections</a>
+            </td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">8</td>
+            <td style="text-align:right"> 0</td>
+            <td style="text-align:right"> 100%</td>
+            <td style="text-align:right"> 0%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#net_sf_morph_integration_commons_lang">net.sf.morph.integration.commons.lang</a>
+            </td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right"> 0</td>
+            <td style="text-align:right"> 100%</td>
+            <td style="text-align:right"> 0%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#net_sf_morph_integration_velocity">net.sf.morph.integration.velocity</a>
+            </td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">7</td>
+            <td style="text-align:right"> 0</td>
+            <td style="text-align:right"> 88%</td>
+            <td style="text-align:right"> 12%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#net_sf_morph_lang">net.sf.morph.lang</a>
+            </td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">7</td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right"> 0.5</td>
+            <td style="text-align:right"> 36%</td>
+            <td style="text-align:right"> 14%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#net_sf_morph_lang_languages">net.sf.morph.lang.languages</a>
+            </td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">9</td>
+            <td style="text-align:right"> 0.33</td>
+            <td style="text-align:right"> 75%</td>
+            <td style="text-align:right"> 8%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#net_sf_morph_lang_support">net.sf.morph.lang.support</a>
+            </td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right"> 0.67</td>
+            <td style="text-align:right"> 83%</td>
+            <td style="text-align:right"> 50%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#net_sf_morph_reflect">net.sf.morph.reflect</a>
+            </td>
+            <td style="text-align:right">12</td>
+            <td style="text-align:right">10</td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">10</td>
+            <td style="text-align:right">7</td>
+            <td style="text-align:right"> 0.83</td>
+            <td style="text-align:right"> 41%</td>
+            <td style="text-align:right"> 25%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#net_sf_morph_reflect_reflectors">net.sf.morph.reflect.reflectors</a>
+            </td>
+            <td style="text-align:right">31</td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right">26</td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right">25</td>
+            <td style="text-align:right"> 0.16</td>
+            <td style="text-align:right"> 83%</td>
+            <td style="text-align:right"> 1%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#net_sf_morph_reflect_support">net.sf.morph.reflect.support</a>
+            </td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">9</td>
+            <td style="text-align:right"> 0</td>
+            <td style="text-align:right"> 90%</td>
+            <td style="text-align:right"> 10%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#net_sf_morph_transform">net.sf.morph.transform</a>
+            </td>
+            <td style="text-align:right">10</td>
+            <td style="text-align:right">9</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">11</td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right"> 0.9</td>
+            <td style="text-align:right"> 31%</td>
+            <td style="text-align:right"> 21%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#net_sf_morph_transform_converters">net.sf.morph.transform.converters</a>
+            </td>
+            <td style="text-align:right">34</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">33</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">16</td>
+            <td style="text-align:right"> 0.03</td>
+            <td style="text-align:right"> 84%</td>
+            <td style="text-align:right"> 13%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#net_sf_morph_transform_copiers">net.sf.morph.transform.copiers</a>
+            </td>
+            <td style="text-align:right">26</td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">24</td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">18</td>
+            <td style="text-align:right"> 0.08</td>
+            <td style="text-align:right"> 90%</td>
+            <td style="text-align:right"> 2%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#net_sf_morph_transform_support">net.sf.morph.transform.support</a>
+            </td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">4</td>
+            <td style="text-align:right"> 0.5</td>
+            <td style="text-align:right"> 57%</td>
+            <td style="text-align:right"> 7%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#net_sf_morph_transform_transformers">net.sf.morph.transform.transformers</a>
+            </td>
+            <td style="text-align:right">10</td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">8</td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right">16</td>
+            <td style="text-align:right"> 0.2</td>
+            <td style="text-align:right"> 76%</td>
+            <td style="text-align:right"> 4%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#net_sf_morph_util">net.sf.morph.util</a>
+            </td>
+            <td style="text-align:right">35</td>
+            <td style="text-align:right">9</td>
+            <td style="text-align:right">26</td>
+            <td style="text-align:right">14</td>
+            <td style="text-align:right">16</td>
+            <td style="text-align:right"> 0.26</td>
+            <td style="text-align:right"> 53%</td>
+            <td style="text-align:right"> 21%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#net_sf_morph_web">net.sf.morph.web</a>
+            </td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">0</td>
+            <td style="text-align:right">5</td>
+            <td style="text-align:right"> 0</td>
+            <td style="text-align:right"> 100%</td>
+            <td style="text-align:right"> 0%</td>
+          </tr>
+          <tr class="b">
+            <td>
+              <a href="#net_sf_morph_wrap">net.sf.morph.wrap</a>
+            </td>
+            <td style="text-align:right">12</td>
+            <td style="text-align:right">11</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right">3</td>
+            <td style="text-align:right"> 0.92</td>
+            <td style="text-align:right"> 50%</td>
+            <td style="text-align:right"> 42%</td>
+          </tr>
+          <tr class="a">
+            <td>
+              <a href="#net_sf_morph_wrap_support">net.sf.morph.wrap.support</a>
+            </td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">7</td>
+            <td style="text-align:right"> 0.5</td>
+            <td style="text-align:right"> 88%</td>
+            <td style="text-align:right"> 38%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><div class="section"><a name="Packages"></a><h2>Packages</h2>
+      <p>[
+        <a href="#Summary">summary</a>] [
+        <a href="#Packages">packages</a>] [
+        <a href="#Cycles">cycles</a>] [
+        <a href="#Explanations">explanations</a>]
+      </p>
+      <div class="subsection"><a name="net_sf_morph"></a><h3>net.sf.morph</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>17</td>
+              <td>13</td>
+              <td> 67%</td>
+              <td> 43%</td>
+              <td> 10%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/Defaults.html">Defaults</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/Morph.html">Morph</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/MorphException.html">MorphException</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph_context">net.sf.morph.context</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_context_contexts">net.sf.morph.context.contexts</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_integration_commons_collections">net.sf.morph.integration.commons.collections</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_integration_commons_lang">net.sf.morph.integration.commons.lang</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_integration_velocity">net.sf.morph.integration.velocity</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang">net.sf.morph.lang</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang_languages">net.sf.morph.lang.languages</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect">net.sf.morph.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect_reflectors">net.sf.morph.reflect.reflectors</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect_support">net.sf.morph.reflect.support</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform">net.sf.morph.transform</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_converters">net.sf.morph.transform.converters</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_copiers">net.sf.morph.transform.copiers</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_transformers">net.sf.morph.transform.transformers</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_util">net.sf.morph.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_wrap">net.sf.morph.wrap</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_wrap_support">net.sf.morph.wrap.support</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_math">java.math</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang">net.sf.morph.lang</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang_languages">net.sf.morph.lang.languages</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect">net.sf.morph.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect_reflectors">net.sf.morph.reflect.reflectors</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform">net.sf.morph.transform</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_converters">net.sf.morph.transform.converters</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_copiers">net.sf.morph.transform.copiers</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_transformers">net.sf.morph.transform.transformers</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_util">net.sf.morph.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_wrap">net.sf.morph.wrap</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_context"></a><h3>net.sf.morph.context</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>3</td>
+              <td>3</td>
+              <td> 80%</td>
+              <td> 50%</td>
+              <td> 30%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/context/Context.html">Context</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/context/DecoratedContext.html">DecoratedContext</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/context/DelegatingContext.html">DelegatingContext</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/context/HierarchicalContext.html">HierarchicalContext</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/context/ContextException.html">ContextException</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph_context_contexts">net.sf.morph.context.contexts</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_context_support">net.sf.morph.context.support</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect_reflectors">net.sf.morph.reflect.reflectors</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_context_contexts"></a><h3>net.sf.morph.context.contexts</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>2</td>
+              <td>14</td>
+              <td> 29%</td>
+              <td> 88%</td>
+              <td> 16%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/context/contexts/BaseContext.html">BaseContext</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/context/contexts/BaseHierarchicalContext.html">BaseHierarchicalContext</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/context/contexts/ContextDecorator.html">ContextDecorator</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/context/contexts/HttpServletContext.html">HttpServletContext</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/context/contexts/JspContext.html">JspContext</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/context/contexts/MapContext.html">MapContext</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/context/contexts/ReflectorHierarchicalContext.html">ReflectorHierarchicalContext</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph_reflect_reflectors">net.sf.morph.reflect.reflectors</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_web">net.sf.morph.web</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#javax_servlet_http">javax.servlet.http</a>
+                  </li>
+                  <li>
+                    <a href="#javax_servlet_jsp">javax.servlet.jsp</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_util">net.sf.composite.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_context">net.sf.morph.context</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_context_support">net.sf.morph.context.support</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang">net.sf.morph.lang</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect">net.sf.morph.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect_reflectors">net.sf.morph.reflect.reflectors</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform">net.sf.morph.transform</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_util">net.sf.morph.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_logging">org.apache.commons.logging</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_context_support"></a><h3>net.sf.morph.context.support</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>1</td>
+              <td>5</td>
+              <td> 0%</td>
+              <td> 83%</td>
+              <td> 17%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/context/support/ContextMap.html">ContextMap</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/context/support/ContextMapBridge.html">ContextMapBridge</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/context/support/MapEntry.html">MapEntry</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph_context_contexts">net.sf.morph.context.contexts</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_util">net.sf.composite.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_context">net.sf.morph.context</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_util">net.sf.morph.util</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_integration_commons_beanutils"></a><h3>net.sf.morph.integration.commons.beanutils</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>1</td>
+              <td>5</td>
+              <td> 0%</td>
+              <td> 83%</td>
+              <td> 17%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/integration/commons/beanutils/BeanUtilsConverter.html">BeanUtilsConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/integration/commons/beanutils/BeanUtilsConverter.html">BeanUtilsConverter$MyConvertUtilsBeanHack</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph_transform_converters">net.sf.morph.transform.converters</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform">net.sf.morph.transform</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_transformers">net.sf.morph.transform.transformers</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_beanutils">org.apache.commons.beanutils</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_integration_commons_collections"></a><h3>net.sf.morph.integration.commons.collections</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>0</td>
+              <td>8</td>
+              <td> 0%</td>
+              <td> 100%</td>
+              <td> 0%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/integration/commons/collections/DecoratedConverterToTransformerAdapter.html">DecoratedConverterToTransformerAdapter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/integration/commons/collections/TransformerToDecoratedConverterAdapter.html">TransformerToDecoratedConverterAdapter</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_util">net.sf.composite.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform">net.sf.morph.transform</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_transformers">net.sf.morph.transform.transformers</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_util">net.sf.morph.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_collections">org.apache.commons.collections</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_integration_commons_lang"></a><h3>net.sf.morph.integration.commons.lang</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>0</td>
+              <td>4</td>
+              <td> 0%</td>
+              <td> 100%</td>
+              <td> 0%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/integration/commons/lang/LanguageStrLookup.html">LanguageStrLookup</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang">net.sf.morph.lang</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_lang_text">org.apache.commons.lang.text</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_integration_velocity"></a><h3>net.sf.morph.integration.velocity</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>1</td>
+              <td>7</td>
+              <td> 0%</td>
+              <td> 88%</td>
+              <td> 12%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/integration/velocity/ReflectorVelocityContext.html">ReflectorVelocityContext</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/integration/velocity/VelocityContextReflector.html">VelocityContextReflector</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph_reflect_reflectors">net.sf.morph.reflect.reflectors</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect">net.sf.morph.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect_reflectors">net.sf.morph.reflect.reflectors</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_util">net.sf.morph.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_velocity_context">org.apache.velocity.context</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_lang"></a><h3>net.sf.morph.lang</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>7</td>
+              <td>4</td>
+              <td> 50%</td>
+              <td> 36%</td>
+              <td> 14%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/lang/DecoratedLanguage.html">DecoratedLanguage</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/lang/Language.html">Language</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/lang/InvalidExpressionException.html">InvalidExpressionException</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/lang/LanguageException.html">LanguageException</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_context_contexts">net.sf.morph.context.contexts</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_integration_commons_lang">net.sf.morph.integration.commons.lang</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang_languages">net.sf.morph.lang.languages</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang_support">net.sf.morph.lang.support</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_converters">net.sf.morph.transform.converters</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_copiers">net.sf.morph.transform.copiers</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform">net.sf.morph.transform</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_lang_languages"></a><h3>net.sf.morph.lang.languages</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>3</td>
+              <td>9</td>
+              <td> 33%</td>
+              <td> 75%</td>
+              <td> 8%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/lang/languages/BaseLanguage.html">BaseLanguage</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/lang/languages/LanguageDecorator.html">LanguageDecorator</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/lang/languages/SimpleLanguage.html">SimpleLanguage</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_converters">net.sf.morph.transform.converters</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_copiers">net.sf.morph.transform.copiers</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_util">net.sf.composite.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang">net.sf.morph.lang</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang_support">net.sf.morph.lang.support</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect">net.sf.morph.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform">net.sf.morph.transform</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_logging">org.apache.commons.logging</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_lang_support"></a><h3>net.sf.morph.lang.support</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>1</td>
+              <td>5</td>
+              <td> 67%</td>
+              <td> 83%</td>
+              <td> 50%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/lang/support/BaseExpressionParser.html">BaseExpressionParser</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/lang/support/ExpressionParser.html">ExpressionParser</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/lang/support/SimpleExpressionParser.html">SimpleExpressionParser</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph_lang_languages">net.sf.morph.lang.languages</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_util">net.sf.composite.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang">net.sf.morph.lang</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_util">net.sf.morph.util</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_reflect"></a><h3>net.sf.morph.reflect</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>10</td>
+              <td>7</td>
+              <td> 83%</td>
+              <td> 41%</td>
+              <td> 25%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/BeanReflector.html">BeanReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/CompositeReflector.html">CompositeReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/ContainerReflector.html">ContainerReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/DecoratedReflector.html">DecoratedReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/GrowableContainerReflector.html">GrowableContainerReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/IndexedContainerReflector.html">IndexedContainerReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/InstantiatingReflector.html">InstantiatingReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/MutableIndexedContainerReflector.html">MutableIndexedContainerReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/Reflector.html">Reflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/SizableReflector.html">SizableReflector</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/NoReflectorFoundException.html">NoReflectorFoundException</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/ReflectionException.html">ReflectionException</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_context_contexts">net.sf.morph.context.contexts</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_integration_velocity">net.sf.morph.integration.velocity</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang_languages">net.sf.morph.lang.languages</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect_reflectors">net.sf.morph.reflect.reflectors</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_converters">net.sf.morph.transform.converters</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_copiers">net.sf.morph.transform.copiers</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_transformers">net.sf.morph.transform.transformers</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_util">net.sf.morph.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_wrap_support">net.sf.morph.wrap.support</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite">net.sf.composite</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_util">net.sf.composite.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_util">net.sf.morph.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_wrap">net.sf.morph.wrap</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_reflect_reflectors"></a><h3>net.sf.morph.reflect.reflectors</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>5</td>
+              <td>25</td>
+              <td> 16%</td>
+              <td> 83%</td>
+              <td> 1%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/BaseBeanReflector.html">BaseBeanReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/BaseCompositeReflector.html">BaseCompositeReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/BaseContainerReflector.html">BaseContainerReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/BaseReflector.html">BaseReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/BaseServletReflector.html">BaseServletReflector</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/ArrayReflector.html">ArrayReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/CollectionReflector.html">CollectionReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/ContextReflector.html">ContextReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/DynaBeanReflector.html">DynaBeanReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/EnumerationReflector.html">EnumerationReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/HttpSessionAttributeReflector.html">HttpSessionAttributeReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/IteratorReflector.html">IteratorReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/ListReflector.html">ListReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/MapReflector.html">MapReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/ObjectReflector.html">ObjectReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/PageContextAttributeReflector.html">PageContextAttributeReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/ReflectorDecorator.html">ReflectorDecorator</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/ResetableIteratorWrapperReflector.html">ResetableIteratorWrapperReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/ResultSetReflector.html">ResultSetReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/ServletContextAttributeReflector.html">ServletContextAttributeReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/ServletContextInitParameterReflector.html">ServletContextInitParameterReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/ServletRequestAttributeReflector.html">ServletRequestAttributeReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/ServletRequestParameterReflector.html">ServletRequestParameterReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/ServletRequestReflector.html">ServletRequestReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/SetReflector.html">SetReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/SimpleDelegatingReflector.html">SimpleDelegatingReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/SimpleInstantiatingReflector.html">SimpleInstantiatingReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/SortedSetReflector.html">SortedSetReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/StringTokenizerReflector.html">StringTokenizerReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/StubbornDelegatingReflector.html">StubbornDelegatingReflector</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/reflectors/VelocityContextReflector.html">VelocityContextReflector</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_context_contexts">net.sf.morph.context.contexts</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_integration_velocity">net.sf.morph.integration.velocity</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_copiers">net.sf.morph.transform.copiers</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_transformers">net.sf.morph.transform.transformers</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang_reflect">java.lang.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#java_sql">java.sql</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#javax_servlet">javax.servlet</a>
+                  </li>
+                  <li>
+                    <a href="#javax_servlet_http">javax.servlet.http</a>
+                  </li>
+                  <li>
+                    <a href="#javax_servlet_jsp">javax.servlet.jsp</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite">net.sf.composite</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_specialize">net.sf.composite.specialize</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_specialize_specializers">net.sf.composite.specialize.specializers</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_util">net.sf.composite.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_validate">net.sf.composite.validate</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_context">net.sf.morph.context</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_context_contexts">net.sf.morph.context.contexts</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_integration_velocity">net.sf.morph.integration.velocity</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect">net.sf.morph.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect_support">net.sf.morph.reflect.support</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform">net.sf.morph.transform</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_support">net.sf.morph.transform.support</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_util">net.sf.morph.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_wrap">net.sf.morph.wrap</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_wrap_support">net.sf.morph.wrap.support</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_beanutils">org.apache.commons.beanutils</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_logging">org.apache.commons.logging</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_reflect_support"></a><h3>net.sf.morph.reflect.support</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>1</td>
+              <td>9</td>
+              <td> 0%</td>
+              <td> 90%</td>
+              <td> 10%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/support/MethodHolder.html">MethodHolder</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/support/ObjectIterator.html">ObjectIterator</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/support/ReflectionInfo.html">ReflectionInfo</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/reflect/support/ResultSetIterator.html">ResultSetIterator</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph_reflect_reflectors">net.sf.morph.reflect.reflectors</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_beans">java.beans</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang_reflect">java.lang.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#java_sql">java.sql</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_util">net.sf.composite.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_util">net.sf.morph.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_logging">org.apache.commons.logging</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_transform"></a><h3>net.sf.morph.transform</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>11</td>
+              <td>5</td>
+              <td> 90%</td>
+              <td> 31%</td>
+              <td> 21%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/Converter.html">Converter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/Copier.html">Copier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/DecoratedConverter.html">DecoratedConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/DecoratedCopier.html">DecoratedCopier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/DecoratedTransformer.html">DecoratedTransformer</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/ExplicitTransformer.html">ExplicitTransformer</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/ImpreciseTransformer.html">ImpreciseTransformer</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/NodeCopier.html">NodeCopier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/Transformer.html">Transformer</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/TransformationException.html">TransformationException</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_context_contexts">net.sf.morph.context.contexts</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_integration_commons_beanutils">net.sf.morph.integration.commons.beanutils</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_integration_commons_collections">net.sf.morph.integration.commons.collections</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang">net.sf.morph.lang</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang_languages">net.sf.morph.lang.languages</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect_reflectors">net.sf.morph.reflect.reflectors</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_converters">net.sf.morph.transform.converters</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_copiers">net.sf.morph.transform.copiers</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_transformers">net.sf.morph.transform.transformers</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_util">net.sf.morph.util</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite">net.sf.composite</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_util">net.sf.composite.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_transform_converters"></a><h3>net.sf.morph.transform.converters</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>3</td>
+              <td>16</td>
+              <td> 3%</td>
+              <td> 84%</td>
+              <td> 13%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/BaseToPrettyTextConverter.html">BaseToPrettyTextConverter</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/ArbitraryObjectMappingConverter.html">ArbitraryObjectMappingConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/ArbitraryTypeMappingConverter.html">ArbitraryTypeMappingConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/BeanToPrettyTextConverter.html">BeanToPrettyTextConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/BeanUtilsConverter.html">BeanUtilsConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/BooleanToTextConverter.html">BooleanToTextConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/ConstantConverter.html">ConstantConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/ContainerToPrettyTextConverter.html">ContainerToPrettyTextConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/ContainerToTraverserConverter.html">ContainerToTraverserConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/ConverterDecorator.html">ConverterDecorator</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/DefaultToBooleanConverter.html">DefaultToBooleanConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/DefaultToTextConverter.html">DefaultToTextConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/EvaluateExpressionConverter.html">EvaluateExpressionConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/IdentityConverter.html">IdentityConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/ImmutableTypesOnlyIdentityConverter.html">ImmutableTypesOnlyIdentityConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/NullConverter.html">NullConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/NumberConverter.html">NumberConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/NumberToBooleanConverter.html">NumberToBooleanConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/NumberToTextConverter.html">NumberToTextConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/NumberToTimeConverter.html">NumberToTimeConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/ObjectToBooleanConverter.html">ObjectToBooleanConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/ObjectToClassConverter.html">ObjectToClassConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/ObjectToPrettyTextConverter.html">ObjectToPrettyTextConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/ObjectToPrettyTextConverter.html">ObjectToPrettyTextConverter$1</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/ObjectToTextConverter.html">ObjectToTextConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/PrimitiveWrapperConverter.html">PrimitiveWrapperConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/TextConverter.html">TextConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/TextToBooleanConverter.html">TextToBooleanConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/TextToClassConverter.html">TextToClassConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/TextToNumberConverter.html">TextToNumberConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/TextToTimeConverter.html">TextToTimeConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/TimeConverter.html">TimeConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/TimeToNumberConverter.html">TimeToNumberConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/converters/TimeToTextConverter.html">TimeToTextConverter</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_copiers">net.sf.morph.transform.copiers</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_transformers">net.sf.morph.transform.transformers</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang_reflect">java.lang.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#java_math">java.math</a>
+                  </li>
+                  <li>
+                    <a href="#java_text">java.text</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_util">net.sf.composite.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_integration_commons_beanutils">net.sf.morph.integration.commons.beanutils</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang">net.sf.morph.lang</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang_languages">net.sf.morph.lang.languages</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect">net.sf.morph.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform">net.sf.morph.transform</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_support">net.sf.morph.transform.support</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_transformers">net.sf.morph.transform.transformers</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_util">net.sf.morph.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_logging">org.apache.commons.logging</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_transform_copiers"></a><h3>net.sf.morph.transform.copiers</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>2</td>
+              <td>18</td>
+              <td> 8%</td>
+              <td> 90%</td>
+              <td> 2%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/AssemblyCopierSupport.html">AssemblyCopierSupport</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/BasePropertyNameCopier.html">BasePropertyNameCopier</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/ArrayCopier.html">ArrayCopier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/AssemblerCopier.html">AssemblerCopier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/AssemblyCopierSupport.html">AssemblyCopierSupport$1</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/CombiningCopier.html">CombiningCopier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/ConditionalCopier.html">ConditionalCopier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/ContainerCopier.html">ContainerCopier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/ContainerOfBeansCopier.html">ContainerOfBeansCopier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/CopierDecorator.html">CopierDecorator</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/CumulativeCopier.html">CumulativeCopier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/DisassemblerCopier.html">DisassemblerCopier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/DisassemblerCopier.html">DisassemblerCopier$1</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/DisassemblerCopier.html">DisassemblerCopier$DefaultClassConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/DisassemblerCopier.html">DisassemblerCopier$Disassembly</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/DisassemblerCopier.html">DisassemblerCopier$DisassemblyContainerCopier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/DisassemblerCopier.html">DisassemblerCopier$DisassemblyIterator</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/ImmutableComponentArrayCopier.html">ImmutableComponentArrayCopier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/MapCopier.html">MapCopier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/MultipleDestinationConverter.html">MultipleDestinationConverter</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/NOPCopier.html">NOPCopier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/PropertyExpressionMappingCopier.html">PropertyExpressionMappingCopier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/PropertyNameMappingCopier.html">PropertyNameMappingCopier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/PropertyNameMatchingCopier.html">PropertyNameMatchingCopier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/SetExpressionCopier.html">SetExpressionCopier</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/copiers/TextToContainerCopier.html">TextToContainerCopier</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_transformers">net.sf.morph.transform.transformers</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang_reflect">java.lang.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_extract">net.sf.composite.extract</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_util">net.sf.composite.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_validate">net.sf.composite.validate</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_validate_validators">net.sf.composite.validate.validators</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang">net.sf.morph.lang</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang_languages">net.sf.morph.lang.languages</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect">net.sf.morph.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect_reflectors">net.sf.morph.reflect.reflectors</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform">net.sf.morph.transform</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_converters">net.sf.morph.transform.converters</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_support">net.sf.morph.transform.support</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_transformers">net.sf.morph.transform.transformers</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_util">net.sf.morph.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_logging">org.apache.commons.logging</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_transform_support"></a><h3>net.sf.morph.transform.support</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>3</td>
+              <td>4</td>
+              <td> 50%</td>
+              <td> 57%</td>
+              <td> 7%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/support/NumberRounder.html">NumberRounder</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/support/ResetableIteratorWrapper.html">ResetableIteratorWrapper</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph_reflect_reflectors">net.sf.morph.reflect.reflectors</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_converters">net.sf.morph.transform.converters</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_copiers">net.sf.morph.transform.copiers</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_math">java.math</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_util">net.sf.morph.util</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_transform_transformers"></a><h3>net.sf.morph.transform.transformers</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>5</td>
+              <td>16</td>
+              <td> 20%</td>
+              <td> 76%</td>
+              <td> 4%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/transformers/BaseCompositeTransformer.html">BaseCompositeTransformer</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/transformers/BaseTransformer.html">BaseTransformer</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/transformers/BaseReflectorTransformer.html">BaseReflectorTransformer</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/transformers/ChainedTransformer.html">ChainedTransformer</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/transformers/SimpleDelegatingTransformer.html">SimpleDelegatingTransformer</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/transformers/SimpleDelegatingTransformer.html">SimpleDelegatingTransformer$1</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/transformers/SimpleDelegatingTransformer.html">SimpleDelegatingTransformer$MapThreadLocal</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/transformers/SimpleDelegatingTransformer.html">SimpleDelegatingTransformer$StackDepthThreadLocal</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/transformers/TransformerDecorator.html">TransformerDecorator</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/transform/transformers/TypeChangingGraphTransformer.html">TypeChangingGraphTransformer</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_integration_commons_beanutils">net.sf.morph.integration.commons.beanutils</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_integration_commons_collections">net.sf.morph.integration.commons.collections</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_converters">net.sf.morph.transform.converters</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_copiers">net.sf.morph.transform.copiers</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang_reflect">java.lang.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite">net.sf.composite</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_specialize">net.sf.composite.specialize</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_specialize_specializers">net.sf.composite.specialize.specializers</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_util">net.sf.composite.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_validate">net.sf.composite.validate</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect">net.sf.morph.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect_reflectors">net.sf.morph.reflect.reflectors</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform">net.sf.morph.transform</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_converters">net.sf.morph.transform.converters</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_copiers">net.sf.morph.transform.copiers</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_util">net.sf.morph.util</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_logging">org.apache.commons.logging</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_util"></a><h3>net.sf.morph.util</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>14</td>
+              <td>16</td>
+              <td> 26%</td>
+              <td> 53%</td>
+              <td> 21%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/util/Assert.html">Assert</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/Assert.html">Assert$Validator</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/ClassUtils.html">ClassUtils</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/NumberUtils.html">NumberUtils</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/NumberUtils.html">NumberUtils$NumberFactory</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/ProxyUtils.html">ProxyUtils</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/ReflectorUtils.html">ReflectorUtils</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/TransformerUtils.html">TransformerUtils</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/TransformerUtils.html">TransformerUtils$ClassStrategy</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/util/AnyAccessDelegatingInvocationHandler.html">AnyAccessDelegatingInvocationHandler</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/AnyAccessDelegatingInvocationHandler.html">AnyAccessDelegatingInvocationHandler$1</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/AnyAccessDelegatingInvocationHandler.html">AnyAccessDelegatingInvocationHandler$MethodDescription</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/Assert.html">Assert$1</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/Assert.html">Assert$2</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/BidirectionalMap.html">BidirectionalMap</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/ContainerUtils.html">ContainerUtils</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/EnumerationIterator.html">EnumerationIterator</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/IteratorEnumeration.html">IteratorEnumeration</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/LanguageUtils.html">LanguageUtils</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/ListOrderedSet.html">ListOrderedSet</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/ListOrderedSet.html">ListOrderedSet$1</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/ListOrderedSet.html">ListOrderedSet$OrderedSetIterator</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/MorphStringTokenizer.html">MorphStringTokenizer</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/MutableInteger.html">MutableInteger</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/NestableRuntimeException.html">NestableRuntimeException</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/NumberUtils.html">NumberUtils$1</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/NumberUtils.html">NumberUtils$ConstructorNumberFactory</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/NumberUtils.html">NumberUtils$MethodNumberFactory</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/NumberUtils.html">NumberUtils$NarrownessComparator</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/ResourceArrayInputStream.html">ResourceArrayInputStream</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/ResourceArrayInputStreamPropertyEditor.html">ResourceArrayInputStreamPropertyEditor</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/StringUtils.html">StringUtils</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/TransformerUtils.html">TransformerUtils$1</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/TransformerUtils.html">TransformerUtils$2</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/util/TypeMap.html">TypeMap</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_context_contexts">net.sf.morph.context.contexts</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_context_support">net.sf.morph.context.support</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_integration_commons_collections">net.sf.morph.integration.commons.collections</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_integration_velocity">net.sf.morph.integration.velocity</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_lang_support">net.sf.morph.lang.support</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect">net.sf.morph.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect_reflectors">net.sf.morph.reflect.reflectors</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect_support">net.sf.morph.reflect.support</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_converters">net.sf.morph.transform.converters</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_copiers">net.sf.morph.transform.copiers</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_support">net.sf.morph.transform.support</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform_transformers">net.sf.morph.transform.transformers</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_wrap_support">net.sf.morph.wrap.support</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_beans">java.beans</a>
+                  </li>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang_reflect">java.lang.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#java_math">java.math</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_util">net.sf.composite.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect">net.sf.morph.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_transform">net.sf.morph.transform</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_collections_iterators">org.apache.commons.collections.iterators</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_collections_list">org.apache.commons.collections.list</a>
+                  </li>
+                  <li>
+                    <a href="#org_apache_commons_logging">org.apache.commons.logging</a>
+                  </li>
+                  <li>
+                    <a href="#org_springframework_core_io">org.springframework.core.io</a>
+                  </li>
+                  <li>
+                    <a href="#org_springframework_core_io_support">org.springframework.core.io.support</a>
+                  </li>
+                  <li>
+                    <a href="#org_springframework_util">org.springframework.util</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_web"></a><h3>net.sf.morph.web</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>0</td>
+              <td>5</td>
+              <td> 0%</td>
+              <td> 100%</td>
+              <td> 0%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/web/MorphFilter.html">MorphFilter</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <em>None</em>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_io">java.io</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#javax_servlet">javax.servlet</a>
+                  </li>
+                  <li>
+                    <a href="#javax_servlet_http">javax.servlet.http</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_context_contexts">net.sf.morph.context.contexts</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_wrap"></a><h3>net.sf.morph.wrap</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>3</td>
+              <td>3</td>
+              <td> 92%</td>
+              <td> 50%</td>
+              <td> 42%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/wrap/Bean.html">Bean</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/wrap/Container.html">Container</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/wrap/DecoratedBean.html">DecoratedBean</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/wrap/DecoratedGrowableContainer.html">DecoratedGrowableContainer</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/wrap/DecoratedIndexedContainer.html">DecoratedIndexedContainer</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/wrap/DecoratedMutableIndexedContainer.html">DecoratedMutableIndexedContainer</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/wrap/GrowableContainer.html">GrowableContainer</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/wrap/IndexedContainer.html">IndexedContainer</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/wrap/MutableIndexedContainer.html">MutableIndexedContainer</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/wrap/Sizable.html">Sizable</a>
+                  </li>
+                  <li>
+                    <a href="xref/net/sf/morph/wrap/Wrapper.html">Wrapper</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/wrap/WrapperException.html">WrapperException</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect">net.sf.morph.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect_reflectors">net.sf.morph.reflect.reflectors</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="subsection"><a name="net_sf_morph_wrap_support"></a><h3>net.sf.morph.wrap.support</h3>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Afferent Couplings</th>
+              <th>Efferent Couplings</th>
+              <th>Abstractness</th>
+              <th>Instability</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>1</td>
+              <td>7</td>
+              <td> 50%</td>
+              <td> 88%</td>
+              <td> 38%</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="bodyTable">
+          <thead>
+            <tr class="b">
+              <th>Abstract Classes</th>
+              <th>Concrete Classes</th>
+              <th>Used by Packages</th>
+              <th>Uses Packages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="a">
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/wrap/support/WrapperInvocationHandler.html">WrapperInvocationHandler</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="xref/net/sf/morph/wrap/support/DefaultWrapperInvocationHandler.html">DefaultWrapperInvocationHandler</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#net_sf_morph_reflect_reflectors">net.sf.morph.reflect.reflectors</a>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="#java_lang">java.lang</a>
+                  </li>
+                  <li>
+                    <a href="#java_lang_reflect">java.lang.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#java_util">java.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_composite_util">net.sf.composite.util</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph">net.sf.morph</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_reflect">net.sf.morph.reflect</a>
+                  </li>
+                  <li>
+                    <a href="#net_sf_morph_util">net.sf.morph.util</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div><div class="section"><a name="Cycles"></a><h2>Cycles</h2>
+      <p>[
+        <a href="#Summary">summary</a>] [
+        <a href="#Packages">packages</a>] [
+        <a href="#Cycles">cycles</a>] [
+        <a href="#Explanations">explanations</a>]
+      </p>
+      <table class="bodyTable">
+        <thead>
+          <tr class="b">
+            <th>Package</th>
+            <th>Cyclic Dependencies</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="a">
+            <td>net.sf.morph</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="b">
+            <td>net.sf.morph.context</td>
+            <td>
+              <ul>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="a">
+            <td>net.sf.morph.context.contexts</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="b">
+            <td>net.sf.morph.context.support</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.context</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="a">
+            <td>net.sf.morph.integration.commons.beanutils</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.transform.transformers</li>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="b">
+            <td>net.sf.morph.integration.commons.collections</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="a">
+            <td>net.sf.morph.integration.commons.lang</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.lang</li>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="b">
+            <td>net.sf.morph.integration.velocity</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="a">
+            <td>net.sf.morph.lang</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="b">
+            <td>net.sf.morph.lang.languages</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="a">
+            <td>net.sf.morph.lang.support</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.lang</li>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="b">
+            <td>net.sf.morph.reflect</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="a">
+            <td>net.sf.morph.reflect.reflectors</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="b">
+            <td>net.sf.morph.reflect.support</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="a">
+            <td>net.sf.morph.transform</td>
+            <td>
+              <ul>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="b">
+            <td>net.sf.morph.transform.converters</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.transform.transformers</li>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="a">
+            <td>net.sf.morph.transform.copiers</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="b">
+            <td>net.sf.morph.transform.support</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="a">
+            <td>net.sf.morph.transform.transformers</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="b">
+            <td>net.sf.morph.util</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="a">
+            <td>net.sf.morph.web</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.context.contexts</li>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="b">
+            <td>net.sf.morph.wrap</td>
+            <td>
+              <ul>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="a">
+            <td>net.sf.morph.wrap.support</td>
+            <td>
+              <ul>
+                <li>net.sf.morph.util</li>
+                <li>net.sf.morph.transform</li>
+                <li>net.sf.morph</li>
+                <li>net.sf.morph.reflect.reflectors</li>
+                <li>net.sf.morph.util</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div><div class="section"><a name="Explanations"></a><h2>Explanations</h2>
+      <p>[
+        <a href="#Summary">summary</a>] [
+        <a href="#Packages">packages</a>] [
+        <a href="#Cycles">cycles</a>] [
+        <a href="#Explanations">explanations</a>]
+      </p>
+      <p>The following explanations are for quick reference and are lifted directly from the original
+        <a href="http://www.clarkware.com/software/JDepend.html" class="externalLink" title="External Link">JDepend documentation</a>.
+      </p>
+      <table class="bodyTable">
+        <thead>
+          <tr class="b">
+            <th>Term</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="a">
+            <td>Number of Classes</td>
+            <td>The number of concrete and abstract classes (and interfaces) in the package is an indicator of the extensibility of the package.</td>
+          </tr>
+          <tr class="b">
+            <td>Afferent Couplings</td>
+            <td>The number of other packages that depend upon classes within the package is an indicator of the package's responsibility.</td>
+          </tr>
+          <tr class="a">
+            <td>Efferent Couplings</td>
+            <td>The number of other packages that the classes in the package depend upon is an indicator of the package's independence.</td>
+          </tr>
+          <tr class="b">
+            <td>Abstractness</td>
+            <td>The ratio of the number of abstract classes (and interfaces) in the analyzed package to the total number of classes in the analyzed package. The range for this metric is 0 to 1, with A=0 indicating a completely concrete package and A=1 indicating a completely abstract package.</td>
+          </tr>
+          <tr class="a">
+            <td>Instability</td>
+            <td>The ratio of efferent coupling (Ce) to total coupling (Ce / (Ce + Ca)). This metric is an indicator of the package's resilience to change. The range for this metric is 0 to 1, with I=0 indicating a completely stable package and I=1 indicating a completely instable package.</td>
+          </tr>
+          <tr class="b">
+            <td>Distance</td>
+            <td>The perpendicular distance of a package from the idealized line A + I = 1. This metric is an indicator of the package's balance between abstractness and stability. A package squarely on the main sequence is optimally balanced with respect to its abstractness and stability. Ideal packages are either completely abstract and stable (x=0, y=1) or completely concrete and instable (x=1, y=0). The range for this metric is 0 to 1, with D=0 indicating a package that is coincident with the main sequence and D=1 indicating a package that is as far from the main sequence as possible.</td>
+          </tr>
+          <tr class="a">
+            <td>Cycles</td>
+            <td>Packages participating in a package dependency cycle are in a deadly embrace with respect to reusability and their release cycle. Package dependency cycles can be easily identified by reviewing the textual reports of dependency cycles. Once these dependency cycles have been identified with JDepend, they can be broken by employing various object-oriented techniques.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div></div></div><div class="clear"><hr></hr></div><div id="footer"><div class="xright">© 2004-2008, SourceForge</div><div class="clear"><hr></hr></div></div></body></html>

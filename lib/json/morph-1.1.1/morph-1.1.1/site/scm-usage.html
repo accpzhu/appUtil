@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><title>Morph - Source Repository</title><style type="text/css" media="all">
+          @import url("./style/maven-base.css");
+          
+          @import url("./style/maven-theme.css");</style><link rel="stylesheet" href="./style/print.css" type="text/css" media="print"></link><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"></meta></head><body class="composite"><div id="banner"><a href="http://www.sourceforge.net/" id="organizationLogo"><img alt="SourceForge" src="http://sourceforge.net/sflogo.php?group_id=124910&amp;type=5"></img></a><a href="http://morph.sourceforge.net/" id="projectLogo"><img alt="Morph" src="./images/morph.jpg"></img></a><div class="clear"><hr></hr></div></div><div id="breadcrumbs"><div class="xleft">Last published: 03 July 2008 16:05 CDT
+                <span class="separator">|</span> Doc for  1.1.1
+                </div><div class="xright"></div><div class="clear"><hr></hr></div></div><div id="leftColumn"><div id="navcolumn"><div id="menuMorph"><h5>Morph</h5><ul><li class="none"><a href="index.html">Introduction</a></li><li class="none"><a href="http://sourceforge.net/project/showfiles.php?group_id=124910" class="externalLink" title="External Link">Download</a></li><li class="none"><a href="history.html">History</a></li><li class="none"><a href="http://sourceforge.net/projects/morph" class="externalLink" title="External Link">SourceForge Site</a></li><li class="none"><a href="http://sourceforge.net/project/stats/?group_id=124910&amp;ugn=morph" class="externalLink" title="External Link">Activity Statistics</a></li></ul></div><div id="menuDocumentation"><h5>Documentation</h5><ul><li class="none"><a href="reference/html/index.html">Reference Doc (HTML)</a></li><li class="none"><a href="reference/pdf/morph-reference.pdf">Reference Doc (PDF)</a></li><li class="none"><a href="apidocs/index.html">JavaDoc</a></li><li class="none"><a href="xref/index.html">Browse Source</a></li></ul></div><div id="menuRelated_Projects"><h5>Related Projects</h5><ul><li class="expanded"><a href="alternatives/beanutils.html">BeanUtils</a><ul><li class="none"><a href="http://jakarta.apache.org/commons/beanutils/" class="externalLink" title="External Link">Homepage</a></li><li class="none"><a href="alternatives/beanutils.html">Comparison</a></li></ul></li><li class="expanded"><a href="alternatives/jexl.html">JEXL</a><ul><li class="none"><a href="http://jakarta.apache.org/commons/jexl/" class="externalLink" title="External Link">Homepage</a></li><li class="none"><a href="alternatives/jexl.html">Comparison</a></li></ul></li><li class="none"><a href="morphed_apps.html">Morphed Apps</a></li></ul></div><div id="menuTools"><h5>Tools</h5><ul><li class="none"><a href="http://www.cenqua.com/clover" class="externalLink" title="External Link">Clover</a></li></ul></div><div id="menuProject_Documentation"><h5>Project Documentation</h5><ul><li class="none"><a href="index.html">About</a></li><li class="expanded"><a href="project-info.html">Project Info</a><ul><li class="none"><a href="mail-lists.html">Mailing Lists</a></li><li class="none"><a href="team-list.html">Project Team</a></li><li class="none"><a href="dependencies.html">Dependencies</a></li><li class="none"><strong><a href="scm-usage.html">Source Repository</a></strong></li><li class="none"><a href="issue-tracking.html">Issue Tracking</a></li></ul></li><li class="collapsed"><a href="maven-reports.html">Project Reports</a></li><li class="none"><a href="development-process.html">Development Process</a></li></ul></div><div id="legend"><h5>Legend</h5><ul><li class="externalLink">External Link</li><li class="newWindow">Opens in a new window</li></ul></div><a href="http://maven.apache.org/" title="Built by Maven" id="poweredBy"><img alt="Built by Maven" src="./images/logos/mavenlogo_builtby_w.png"></img></a></div></div><div id="bodyColumn"><div class="contentBox"><div class="section"><a name="Web_Access"></a><h2>Web Access</h2>
+                <p>
+                  This is a link to the online source repository that can be viewed via a web browser:
+                </p>
+                
+    <div class="source"><pre><a href="svn://development.spiderstrategies.com/morph">svn://development.spiderstrategies.com/morph</a></pre></div>
+  
+            </div><div class="section"><a name="Source_Repository"></a><h2>Source Repository</h2>
+    <p>
+        This project uses
+        <a href="http://subversion.tigris.org/" class="externalLink" title="External Link">Subversion</a>
+        to manage its source code. Instructions for using Subversion can be found at
+        <a href="http://svnbook.red-bean.com/" class="externalLink" title="External Link">http://svnbook.red-bean.com/</a>.
+    </p>
+
+  
+          
+    <div class="subsection"><a name="Anonymous_Access_with_Maven"></a><h3>Anonymous Access with Maven</h3>
+        <p>
+            This project's source can be checked out anonymously from SVN with the following instruction set on a single line:
+        </p>
+
+        
+    <div class="source"><pre>
+            
+      maven scm:checkout
+        -Dmaven.scm.method=svn
+        -Dmaven.scm.url=scm:svn://development.spiderstrategies.com/morph
+        -Dmaven.scm.checkout.dir=morph
+    </pre></div>
+  
+    </div>
+
+    
+    <div class="subsection"><a name="Anonymous_Access"></a><h3>Anonymous Access</h3>
+        <p>
+            This project's source can be checked out anonymously from SVN with the following command:
+        </p>
+
+        
+    <div class="source"><pre></pre></div>
+  
+
+    </div>
+  
+  
+    <div class="subsection"><a name="Access_through_a_proxy"></a><h3>Access through a proxy</h3>
+
+        <p>
+            The Subversion client can go through a proxy, if you configure it to do so. First, edit your "servers" configuration file to indicate which proxy to use. The files location depends on your operating system. On Linux or Unix it is located in the directory "~/.subversion". On Windows it is in "%APPDATA%\Subversion". (Try "echo %APPDATA%", note this is a hidden directory.)
+        </p>
+        <p>
+            There are comments in the file explaining what to do. If you don't have that file, get the latest Subversion client and run any command; this will cause the configuration directory and template files to be created.
+        </p>
+        <p>
+            Example : Edit the 'servers' file and add something like:
+        </p>
+        
+    <div class="source"><pre>[global]
+http-proxy-host = your.proxy.name
+http-proxy-port = 3128</pre></div>
+  
+
+    </div>
+
+</div></div></div><div class="clear"><hr></hr></div><div id="footer"><div class="xright">© 2004-2008, SourceForge</div><div class="clear"><hr></hr></div></div></body></html>
